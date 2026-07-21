@@ -17,6 +17,7 @@
 
       <nav class="main-nav" id="mainNav">
         <a href="#hero">Beranda</a>
+        <a href="#benefits">Manfaat</a>
         <a href="#black-garlic">Black Garlic</a>
         <a href="#contact">Kontak</a>
         <a href="#location">Lokasi</a>
@@ -69,6 +70,36 @@
       </div>
 
       <a href="#contact" class="cta-button">Pesan Sekarang</a>
+    </div>
+  </section>
+
+  <section id="benefits" class="fade-in-section">
+    <h2>Kenapa Memilih Air Izaura?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <!-- Ganti dengan foto sumber mata air -->
+        <img src="https://placehold.co/320x220?text=Sumber+Mata+Air" width="320" height="220" alt="Sumber mata air pegunungan Air Izaura">
+        <h3>Sumber Air Pegunungan Pilihan</h3>
+        <p>Diambil langsung dari mata air alami yang terjaga kemurniannya, memberi rasa segar alami di setiap tegukan.</p>
+      </div>
+      <div class="benefit-card">
+        <!-- Ganti dengan foto proses penyaringan/QC -->
+        <img src="https://placehold.co/320x220?text=Proses+Higienis" width="320" height="220" alt="Proses penyaringan higienis Air Izaura">
+        <h3>Proses Higienis Berlapis</h3>
+        <p>Melalui filtrasi multi-tahap dan pengujian ketat, memastikan air yang Anda minum benar-benar bersih dan aman.</p>
+      </div>
+      <div class="benefit-card">
+        <!-- Ganti dengan foto botol dibawa beraktivitas -->
+        <img src="https://placehold.co/320x220?text=Praktis+Dibawa" width="320" height="220" alt="Air Izaura praktis dibawa beraktivitas">
+        <h3>Praktis Dibawa ke Mana Saja</h3>
+        <p>Kemasan ringan dan mudah digenggam, cocok menemani aktivitas harian, olahraga, hingga perjalanan jauh.</p>
+      </div>
+      <div class="benefit-card">
+        <!-- Ganti dengan foto keluarga menikmati Air Izaura -->
+        <img src="https://placehold.co/320x220?text=Untuk+Keluarga" width="320" height="220" alt="Air Izaura untuk seluruh keluarga">
+        <h3>Terjangkau untuk Seluruh Keluarga</h3>
+        <p>Harga bersahabat dengan kualitas premium, menjadikan hidrasi sehat bisa dinikmati setiap hari oleh semua anggota keluarga.</p>
+      </div>
     </div>
   </section>
 
@@ -173,7 +204,6 @@
         navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
 
-      // Tutup menu saat salah satu link diklik (mobile)
       mainNav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           mainNav.classList.remove('open');
