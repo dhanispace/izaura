@@ -1,0 +1,412 @@
+/* ============================================================
+   CSS Custom Properties
+   ============================================================ */
+:root {
+  --font-primary: 'Poppins', sans-serif;
+  --color-blue-primary: #2563EB;
+  --color-blue-light: #EFF6FF;
+  --color-blue-heading: #1E40AF;
+  --color-brown-dark: #92400E;
+  --color-gold-accent: #D4A843;
+  --color-white: #FFFFFF;
+  --color-text-body: #374151;
+  --touch-target-min: 44px;
+  --border-radius: 8px;
+}
+
+/* ============================================================
+   Global Resets & Base Styles
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-primary);
+  color: var(--color-text-body);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  color: var(--color-text-body);
+  background-color: var(--color-white);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================
+   Reduced Motion Accessibility
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================================
+   Hero Section (#hero)
+   ============================================================ */
+#hero {
+  background-color: var(--color-blue-light);
+  padding: 64px 24px;
+}
+
+/* Desktop layout: two columns (text 50%, image 50%) */
+@media (min-width: 768px) {
+  #hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 48px;
+  }
+
+  .hero-text {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .hero-image {
+    flex: 0 0 50%;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Mobile layout: single vertical column (default, <768px) */
+@media (max-width: 767px) {
+  #hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    width: 100%;
+  }
+
+  .hero-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.hero-text h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  color: var(--color-blue-heading);
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+  color: var(--color-text-body);
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch-target-min);
+  min-width: var(--touch-target-min);
+  padding: 12px 28px;
+  background-color: var(--color-blue-primary);
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: background-color 250ms ease, box-shadow 250ms ease;
+  cursor: pointer;
+}
+
+.cta-button:hover,
+.cta-button:focus-visible {
+  background-color: var(--color-blue-heading);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.cta-button:focus-visible {
+  outline: 3px solid var(--color-blue-primary);
+  outline-offset: 2px;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+/* Fade-in section (animation applied via JS .visible class) */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   Black Garlic Section (#black-garlic)
+   Gold/brown accent colors are used EXCLUSIVELY within this
+   scope — no selectors outside #black-garlic use
+   --color-gold-accent or --color-brown-dark.
+   Requirements: 2.5, 5.1, 5.2, 6.3
+   ============================================================ */
+#black-garlic {
+  background-color: var(--color-brown-dark);
+  color: var(--color-white);
+  padding: 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+#black-garlic .black-garlic-image {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#black-garlic .black-garlic-image img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  aspect-ratio: 1 / 1;
+}
+
+#black-garlic .black-garlic-text {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#black-garlic .black-garlic-text h2 {
+  color: var(--color-gold-accent);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+#black-garlic .black-garlic-text p {
+  color: var(--color-white);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+#black-garlic .price-card {
+  display: inline-block;
+  border: 2px solid var(--color-gold-accent);
+  border-radius: var(--border-radius);
+  padding: 1rem 1.5rem;
+  margin-top: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#black-garlic .price-card .price {
+  color: var(--color-gold-accent);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Desktop layout (≥768px): image left 50%, text right 50% */
+@media (min-width: 768px) {
+  #black-garlic {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 5rem 3rem;
+  }
+
+  #black-garlic .black-garlic-image {
+    flex: 0 0 50%;
+    max-width: 50%;
+    justify-content: center;
+  }
+
+  #black-garlic .black-garlic-text {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 2rem;
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   Contact Section (#contact)
+   ============================================================ */
+#contact {
+  padding: 3rem 1.5rem;
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-blue-heading);
+  margin-bottom: 1.5rem;
+}
+
+.contact-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Base button styles */
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 250ms ease, box-shadow 250ms ease, transform 250ms ease;
+}
+
+.contact-btn:focus-visible {
+  outline: 3px solid var(--color-blue-primary);
+  outline-offset: 3px;
+}
+
+/* WhatsApp button — green brand color */
+.contact-btn--whatsapp {
+  background-color: #25D366;
+  color: var(--color-white);
+}
+
+.contact-btn--whatsapp:hover {
+  background-color: #1da851;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+/* Instagram button — brand gradient */
+.contact-btn--instagram {
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: var(--color-white);
+}
+
+.contact-btn--instagram:hover {
+  background: linear-gradient(135deg, #e0832a 0%, #d55e34 25%, #c9213a 50%, #b91d5c 75%, #a91479 100%);
+  box-shadow: 0 4px 12px rgba(220, 39, 67, 0.4);
+}
+
+/* Mobile: stack buttons to column */
+@media (max-width: 767px) {
+  .contact-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* ============================================================
+   Location Section (#location)
+   ============================================================ */
+#location {
+  padding: 3rem 1.5rem;
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+#location h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-blue-heading);
+  margin-bottom: 1.5rem;
+}
+
+#location iframe {
+  width: 100%;
+  min-height: 300px;
+  border: none;
+  border-radius: var(--border-radius);
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+/* Hide iframe[src=""] via CSS (also controlled by JS) */
+#location iframe[src=""] {
+  display: none;
+}
+
+.map-fallback {
+  display: none;
+  padding: 2rem 1rem;
+  background-color: #f3f4f6;
+  border-radius: var(--border-radius);
+  color: var(--color-text-body);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Show fallback when iframe src is empty (CSS-only progressive enhancement) */
+#location:has(iframe[src=""]) .map-fallback {
+  display: block;
+}
+
+#location address {
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-body);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer {
+  padding: 1.5rem 1rem;
+  background-color: #f9fafb;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-body);
+  border-top: 1px solid #e5e7eb;
+}
