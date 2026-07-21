@@ -14,27 +14,67 @@
   <section id="hero" class="fade-in-section">
     <div class="hero-text">
       <h1>Air Izaura - Kesegaran Alami untuk Keluarga Anda</h1>
-      <p>Nikmati air minum yang murni, higienis, dan terpercaya untuk memenuhi kebutuhan hidrasi keluarga Anda setiap hari.</p>
+      <p>
+        Air Izaura hadir sebagai pilihan air minum kemasan yang diproses melalui
+        tahapan penyaringan berlapis untuk memastikan setiap tetesnya benar-benar
+        murni, jernih, dan bebas dari kontaminan. Diambil dari sumber mata air
+        pilihan dan diolah dengan standar higienitas yang ketat, Air Izaura tidak
+        hanya menghilangkan dahaga, tetapi juga menjaga kesehatan tubuh Anda dan
+        seluruh keluarga di rumah.
+      </p>
+      <p>
+        Kami memahami bahwa kebutuhan setiap keluarga berbeda-beda — karena itu
+        Air Izaura tersedia dalam dua pilihan ukuran, besar untuk kebutuhan
+        sehari-hari di rumah maupun kantor, dan kecil yang praktis dibawa
+        bepergian, olahraga, atau aktivitas di luar ruangan. Rasakan kesegaran
+        alami yang bisa Anda percaya, kapan pun dan di mana pun.
+      </p>
+
+      <div class="hero-images">
+        <div class="product-size-card">
+          <!-- Ganti dengan foto Air Izaura ukuran besar -->
+          <img src="https://placehold.co/280x280?text=Air+Izaura+Besar" width="280" height="280" alt="Air Izaura ukuran besar">
+          <span class="size-label">Ukuran Besar</span>
+        </div>
+        <div class="product-size-card">
+          <!-- Ganti dengan foto Air Izaura ukuran kecil -->
+          <img src="https://placehold.co/220x220?text=Air+Izaura+Kecil" width="220" height="220" alt="Air Izaura ukuran kecil">
+          <span class="size-label">Ukuran Kecil</span>
+        </div>
+      </div>
+
       <a href="#contact" class="cta-button">Pesan Sekarang</a>
-    </div>
-    <div class="hero-image">
-      <!-- Ganti dengan foto produk Air Izaura -->
-      <img src="https://placehold.co/300x300?text=Air+Izaura" width="300" height="300" alt="Produk Air Minum Kemasan Air Izaura">
     </div>
   </section>
 
   <section id="black-garlic" class="fade-in-section">
-    <div class="black-garlic-image">
-      <!-- Ganti dengan foto produk Black Garlic -->
-      <img src="https://placehold.co/250x250?text=Black+Garlic" width="250" height="250" alt="Produk Suplemen Herbal Black Garlic Bawang Hitam">
-    </div>
     <div class="black-garlic-text">
       <h2>Black Garlic - Suplemen Herbal Alami</h2>
-      <p>Black Garlic kaya antioksidan tinggi yang melindungi sel tubuh dan membantu peningkatan imun secara alami untuk menjaga kesehatan Anda.</p>
+      <p>
+        Black Garlic adalah bawang putih yang difermentasi secara alami melalui
+        proses pemeraman panjang, mengubah rasa tajam bawang putih biasa menjadi
+        lebih lembut, sedikit manis, dan kaya akan senyawa antioksidan seperti
+        S-allylcysteine yang jauh lebih tinggi dibanding bawang putih segar.
+        Proses fermentasi ini juga membuatnya lebih mudah dicerna dan ramah di
+        lambung, sehingga cocok dikonsumsi rutin oleh berbagai kalangan usia.
+      </p>
+      <p>
+        Dikenal secara turun-temurun sebagai suplemen herbal yang membantu
+        menjaga daya tahan tubuh, melindungi sel dari radikal bebas, serta
+        mendukung kesehatan jantung dan sistem peredaran darah, Black Garlic
+        menjadi pelengkap gaya hidup sehat yang praktis dikonsumsi setiap hari.
+        Setiap butir diproses dengan standar kebersihan tinggi untuk memastikan
+        kualitas dan khasiatnya tetap terjaga hingga sampai ke tangan Anda.
+      </p>
       <div class="price-card">
         <!-- Ganti dengan harga produk Black Garlic -->
         <span class="price">Rp 150.000 / botol</span>
       </div>
+      <div class="black-garlic-image">
+        <!-- Ganti dengan foto produk Black Garlic -->
+        <img src="https://placehold.co/250x250?text=Black+Garlic" width="250" height="250" alt="Produk Suplemen Herbal Black Garlic Bawang Hitam">
+      </div>
+      <a href="#contact" class="cta-button">Pesan Sekarang</a>
     </div>
   </section>
 
@@ -86,14 +126,15 @@
     // Tahun copyright dinamis
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Smooth scroll CTA button ke #contact
-    document.querySelector('.cta-button')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = document.querySelector('#contact');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-      // Jika #contact tidak ada: tidak ada error, click diabaikan gracefully
+    // Smooth scroll semua tombol CTA ke #contact
+    document.querySelectorAll('.cta-button').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector('#contact');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
     });
 
     // Fade-in on scroll via IntersectionObserver
@@ -108,15 +149,17 @@
     document.querySelectorAll('.fade-in-section').forEach(el => fadeObserver.observe(el));
 
     // Validasi konfigurasi — sembunyikan tombol jika masih placeholder
-    const waBtn = document.querySelector('a[href*="wa.me"]');
-    if (waBtn && waBtn.getAttribute('href').includes('62xxxxxxxxxx')) {
-      waBtn.style.display = 'none';
-    }
+    document.querySelectorAll('a[href*="wa.me"]').forEach(waBtn => {
+      if (waBtn.getAttribute('href').includes('62xxxxxxxxxx')) {
+        waBtn.style.display = 'none';
+      }
+    });
 
-    const igBtn = document.querySelector('a[href*="instagram.com"]');
-    if (igBtn && igBtn.getAttribute('href').includes('nama_akun')) {
-      igBtn.style.display = 'none';
-    }
+    document.querySelectorAll('a[href*="instagram.com"]').forEach(igBtn => {
+      if (igBtn.getAttribute('href').includes('nama_akun')) {
+        igBtn.style.display = 'none';
+      }
+    });
 
     // Validasi Maps iframe — tampilkan fallback jika src kosong
     const mapsIframe = document.querySelector('iframe');
