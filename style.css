@@ -1,17 +1,20 @@
 /* ============================================================
-   CSS Custom Properties
+   CSS Custom Properties — Tema Ungu
    ============================================================ */
 :root {
   --font-primary: 'Poppins', sans-serif;
-  --color-blue-primary: #2563EB;
-  --color-blue-light: #EFF6FF;
-  --color-blue-heading: #1E40AF;
-  --color-brown-dark: #92400E;
-  --color-gold-accent: #D4A843;
+  --font-display: 'Playfair Display', serif;
+
+  --color-violet-primary: #6D28D9;
+  --color-violet-deep: #4C1D95;
+  --color-lavender-light: #F5F0FF;
+  --color-plum-dark: #2E1065;
+  --color-gold-accent: #C9A227;
   --color-white: #FFFFFF;
-  --color-text-body: #374151;
+  --color-text-body: #3A3350;
+
   --touch-target-min: 44px;
-  --border-radius: 8px;
+  --border-radius: 12px;
 }
 
 /* ============================================================
@@ -26,6 +29,7 @@
 html {
   font-family: var(--font-primary);
   color: var(--color-text-body);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -46,6 +50,9 @@ img {
    Reduced Motion Accessibility
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *,
   *::before,
   *::after {
@@ -60,19 +67,40 @@ img {
 
 /* ============================================================
    Hero Section (#hero)
+   Signature: pola droplet halus + divider diagonal ke section
+   berikutnya, merepresentasikan gelembung & aliran air.
    ============================================================ */
 #hero {
-  background-color: var(--color-blue-light);
-  padding: 64px 24px;
+  position: relative;
+  overflow: hidden;
+  padding: 64px 24px 96px;
+  background-color: var(--color-lavender-light);
+  background-image:
+    radial-gradient(circle at 12% 22%, rgba(109, 40, 217, 0.08) 0 7px, transparent 8px),
+    radial-gradient(circle at 88% 78%, rgba(109, 40, 217, 0.07) 0 11px, transparent 12px),
+    radial-gradient(circle at 70% 12%, rgba(109, 40, 217, 0.06) 0 5px, transparent 6px),
+    radial-gradient(circle at 30% 85%, rgba(109, 40, 217, 0.05) 0 6px, transparent 7px),
+    linear-gradient(180deg, var(--color-lavender-light) 0%, #FFFFFF 100%);
 }
 
-/* Desktop layout: two columns (text 50%, image 50%) */
+#hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 70px;
+  background-color: var(--color-plum-dark);
+  clip-path: polygon(0 55%, 100% 0, 100% 100%, 0 100%);
+  pointer-events: none;
+}
+
 @media (min-width: 768px) {
   #hero {
     display: flex;
     align-items: center;
     gap: 40px;
-    padding: 80px 48px;
+    padding: 80px 48px 120px;
   }
 
   .hero-text {
@@ -89,7 +117,6 @@ img {
   }
 }
 
-/* Mobile layout: single vertical column (default, <768px) */
 @media (max-width: 767px) {
   #hero {
     display: flex;
@@ -110,38 +137,43 @@ img {
 }
 
 .hero-text h1 {
-  font-size: clamp(32px, 5vw, 48px);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(32px, 5vw, 50px);
   font-weight: 700;
-  color: var(--color-blue-heading);
+  color: var(--color-violet-deep);
   margin: 0 0 16px 0;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .hero-text p {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0 0 16px 0;
   color: var(--color-text-body);
+  position: relative;
+  z-index: 1;
 }
 
 .hero-text p:last-of-type {
   margin-bottom: 32px;
 }
 
-/* Two product size cards (besar & kecil) side by side */
 .hero-images {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 0 0 32px 0;
+  margin: 0 0 36px 0;
+  position: relative;
+  z-index: 1;
 }
 
 .product-size-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .product-size-card img {
@@ -151,47 +183,58 @@ img {
   border-radius: var(--border-radius);
   object-fit: cover;
   aspect-ratio: 1 / 1;
-  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.15);
+  background-color: var(--color-white);
+  box-shadow: 0 8px 28px rgba(109, 40, 217, 0.22);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.product-size-card img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(109, 40, 217, 0.3);
 }
 
 .size-label {
   font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--color-blue-heading);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  color: var(--color-violet-deep);
   background-color: var(--color-white);
-  padding: 4px 14px;
+  padding: 5px 16px;
   border-radius: 999px;
-  border: 1px solid var(--color-blue-primary);
+  border: 1.5px solid var(--color-violet-primary);
 }
 
-/* CTA Button */
 .cta-button {
+  position: relative;
+  z-index: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: var(--touch-target-min);
   min-width: var(--touch-target-min);
-  padding: 12px 28px;
-  background-color: var(--color-blue-primary);
+  padding: 14px 34px;
+  background-color: var(--color-violet-primary);
   color: var(--color-white);
   font-family: var(--font-primary);
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
-  border-radius: var(--border-radius);
-  transition: background-color 250ms ease, box-shadow 250ms ease;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(109, 40, 217, 0.35);
+  transition: background-color 250ms ease, box-shadow 250ms ease, transform 200ms ease;
   cursor: pointer;
 }
 
 .cta-button:hover,
 .cta-button:focus-visible {
-  background-color: var(--color-blue-heading);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+  background-color: var(--color-violet-deep);
+  box-shadow: 0 8px 22px rgba(76, 29, 149, 0.4);
+  transform: translateY(-2px);
 }
 
 .cta-button:focus-visible {
-  outline: 3px solid var(--color-blue-primary);
-  outline-offset: 2px;
+  outline: 3px solid var(--color-violet-primary);
+  outline-offset: 3px;
 }
 
 .hero-image img {
@@ -201,7 +244,6 @@ img {
   border-radius: var(--border-radius);
 }
 
-/* Fade-in section (animation applied via JS .visible class) */
 .fade-in-section {
   opacity: 0;
   transform: translateY(24px);
@@ -215,15 +257,12 @@ img {
 
 /* ============================================================
    Black Garlic Section (#black-garlic)
-   Gold/brown accent colors are used EXCLUSIVELY within this
-   scope — no selectors outside #black-garlic use
-   --color-gold-accent or --color-brown-dark.
-   Requirements: 2.5, 5.1, 5.2, 6.3
    ============================================================ */
 #black-garlic {
-  background-color: var(--color-brown-dark);
+  position: relative;
+  background-color: var(--color-plum-dark);
   color: var(--color-white);
-  padding: 4rem 1.5rem;
+  padding: 4.5rem 1.5rem 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -244,6 +283,7 @@ img {
   object-fit: cover;
   border-radius: var(--border-radius);
   aspect-ratio: 1 / 1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 #black-garlic .black-garlic-text {
@@ -255,16 +295,31 @@ img {
 }
 
 #black-garlic .black-garlic-text h2 {
+  font-family: var(--font-display);
   color: var(--color-gold-accent);
-  font-size: 1.75rem;
+  font-size: 1.9rem;
   font-weight: 700;
-  margin: 0;
+  margin: 0 0 0.25rem 0;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+#black-garlic .black-garlic-text h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 3px;
+  background-color: var(--color-gold-accent);
+  border-radius: 999px;
 }
 
 #black-garlic .black-garlic-text p {
-  color: var(--color-white);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
   text-align: left;
 }
@@ -275,7 +330,7 @@ img {
   border-radius: var(--border-radius);
   padding: 1rem 1.5rem;
   margin-top: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.06);
 }
 
 #black-garlic .price-card .price {
@@ -284,24 +339,27 @@ img {
   font-weight: 700;
 }
 
-/* CTA button inside black-garlic — gold accent to match section theme */
 #black-garlic .cta-button {
   background-color: var(--color-gold-accent);
-  color: var(--color-brown-dark);
+  color: var(--color-plum-dark);
+  box-shadow: 0 4px 14px rgba(201, 162, 39, 0.35);
 }
 
 #black-garlic .cta-button:hover,
 #black-garlic .cta-button:focus-visible {
-  background-color: #c2953a;
-  box-shadow: 0 4px 12px rgba(212, 168, 67, 0.4);
+  background-color: #b18d21;
+  box-shadow: 0 8px 22px rgba(201, 162, 39, 0.45);
 }
 
-/* Desktop layout (≥768px): image left 50%, text right 50% */
+#black-garlic .cta-button:focus-visible {
+  outline: 3px solid var(--color-gold-accent);
+}
+
 @media (min-width: 768px) {
   #black-garlic {
     flex-direction: row;
     align-items: flex-start;
-    padding: 5rem 3rem;
+    padding: 5.5rem 3rem 5rem;
     text-align: left;
   }
 
@@ -318,22 +376,29 @@ img {
     justify-content: center;
     align-items: flex-start;
   }
+
+  #black-garlic .black-garlic-text h2::after {
+    left: 0;
+    transform: none;
+  }
 }
 
 /* ============================================================
    Contact Section (#contact)
    ============================================================ */
 #contact {
-  padding: 3rem 1.5rem;
+  padding: 3.5rem 1.5rem;
   background-color: var(--color-white);
   text-align: center;
 }
 
 #contact h2 {
-  font-size: 1.75rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.9rem;
   font-weight: 700;
-  color: var(--color-blue-heading);
-  margin-bottom: 1.5rem;
+  color: var(--color-violet-deep);
+  margin-bottom: 1.75rem;
 }
 
 .contact-buttons {
@@ -344,7 +409,6 @@ img {
   gap: 1rem;
 }
 
-/* Base button styles */
 .contact-btn {
   display: inline-flex;
   align-items: center;
@@ -352,44 +416,47 @@ img {
   gap: 0.5rem;
   min-width: 44px;
   min-height: 44px;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--border-radius);
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
   font-family: var(--font-primary);
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 250ms ease, box-shadow 250ms ease, transform 250ms ease;
+  transition: background-color 250ms ease, box-shadow 250ms ease, transform 200ms ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
 }
 
 .contact-btn:focus-visible {
-  outline: 3px solid var(--color-blue-primary);
+  outline: 3px solid var(--color-violet-primary);
   outline-offset: 3px;
 }
 
-/* WhatsApp button — green brand color */
 .contact-btn--whatsapp {
   background-color: #25D366;
   color: var(--color-white);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
 }
 
 .contact-btn--whatsapp:hover {
   background-color: #1da851;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
 }
 
-/* Instagram button — brand gradient */
 .contact-btn--instagram {
   background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   color: var(--color-white);
+  box-shadow: 0 4px 14px rgba(220, 39, 67, 0.3);
 }
 
 .contact-btn--instagram:hover {
   background: linear-gradient(135deg, #e0832a 0%, #d55e34 25%, #c9213a 50%, #b91d5c 75%, #a91479 100%);
-  box-shadow: 0 4px 12px rgba(220, 39, 67, 0.4);
+  box-shadow: 0 8px 20px rgba(220, 39, 67, 0.4);
 }
 
-/* Mobile: stack buttons to column */
 @media (max-width: 767px) {
   .contact-buttons {
     flex-direction: column;
@@ -406,28 +473,31 @@ img {
    Location Section (#location)
    ============================================================ */
 #location {
-  padding: 3rem 1.5rem;
-  background-color: var(--color-white);
+  padding: 3.5rem 1.5rem;
+  background-color: var(--color-lavender-light);
   text-align: center;
 }
 
 #location h2 {
-  font-size: 1.75rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.9rem;
   font-weight: 700;
-  color: var(--color-blue-heading);
-  margin-bottom: 1.5rem;
+  color: var(--color-violet-deep);
+  margin-bottom: 1.75rem;
 }
 
 #location iframe {
   width: 100%;
   min-height: 300px;
+  max-width: 700px;
   border: none;
   border-radius: var(--border-radius);
   display: block;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.25rem;
+  box-shadow: 0 8px 28px rgba(109, 40, 217, 0.18);
 }
 
-/* Hide iframe[src=""] via CSS (also controlled by JS) */
 #location iframe[src=""] {
   display: none;
 }
@@ -435,14 +505,13 @@ img {
 .map-fallback {
   display: none;
   padding: 2rem 1rem;
-  background-color: #f3f4f6;
+  background-color: var(--color-white);
   border-radius: var(--border-radius);
   color: var(--color-text-body);
   font-size: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
-/* Show fallback when iframe src is empty (CSS-only progressive enhancement) */
 #location:has(iframe[src=""]) .map-fallback {
   display: block;
 }
@@ -460,10 +529,9 @@ img {
    Footer
    ============================================================ */
 footer {
-  padding: 1.5rem 1rem;
-  background-color: #f9fafb;
+  padding: 1.75rem 1rem;
+  background-color: var(--color-plum-dark);
+  color: rgba(255, 255, 255, 0.75);
   text-align: center;
   font-size: 0.9rem;
-  color: var(--color-text-body);
-  border-top: 1px solid #e5e7eb;
 }
