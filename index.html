@@ -11,6 +11,25 @@
 </head>
 <body>
 
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#hero" class="brand">Izaura<span>.</span></a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#hero">Beranda</a>
+        <a href="#black-garlic">Black Garlic</a>
+        <a href="#contact">Kontak</a>
+        <a href="#location">Lokasi</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mainNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
   <section id="hero" class="fade-in-section">
     <div class="hero-text">
       <h1>Air Izaura - Kesegaran Alami untuk Keluarga Anda</h1>
@@ -29,6 +48,12 @@
         bepergian, olahraga, atau aktivitas di luar ruangan. Rasakan kesegaran
         alami yang bisa Anda percaya, kapan pun dan di mana pun.
       </p>
+
+      <ul class="trust-badges">
+        <li>100% Higienis</li>
+        <li>Teruji Berkualitas</li>
+        <li>Kesegaran Terjamin</li>
+      </ul>
 
       <div class="hero-images">
         <div class="product-size-card">
@@ -113,9 +138,8 @@
       title="Lokasi Toko Air Izaura">
     </iframe>
     <p class="map-fallback">Peta akan ditampilkan di sini</p>
-    <!-- Ganti dengan alamat toko Anda (maks 200 karakter) -->
     <address>
-      Jl. Contoh No. 1, Kelurahan Contoh, Kecamatan Contoh, Kota Contoh, Provinsi Contoh 12345
+      Jl. Rengas I, Blok C41, No. 27, Desa Pandau Jaya, Kec. Siak Hulu, Kab. Kampar, Prov. Riau
     </address>
   </section>
 
@@ -137,6 +161,49 @@
         }
       });
     });
+
+    // Toggle menu navigasi mobile
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = mainNav.classList.toggle('open');
+        navToggle.classList.toggle('open', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      // Tutup menu saat salah satu link diklik (mobile)
+      mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainNav.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Smooth scroll untuk link navigasi header
+    document.querySelectorAll('.main-nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href');
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Header dapat shadow/background solid saat halaman discroll
+    const siteHeader = document.getElementById('siteHeader');
+    if (siteHeader) {
+      const toggleHeaderScrolled = () => {
+        siteHeader.classList.toggle('scrolled', window.scrollY > 12);
+      };
+      toggleHeaderScrolled();
+      window.addEventListener('scroll', toggleHeaderScrolled, { passive: true });
+    }
 
     // Fade-in on scroll via IntersectionObserver
     const fadeObserver = new IntersectionObserver((entries) => {
