@@ -144,6 +144,14 @@
       border: 2px solid #e9d5ff;
     }
 
+    /* KUNCI UKURAN GAMBAR HERO */
+    .product-size-card img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover; /* Mencegah gambar gepeng, memotong bagian lebih */
+      border-radius: 8px;
+    }
+
     .size-label {
       display: block;
       margin-top: 0.5rem;
@@ -205,10 +213,11 @@
       transform: translateY(-10px);
     }
 
+    /* KUNCI UKURAN GAMBAR MANFAAT */
     .benefit-card img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
+      height: 200px; /* Tinggi gambar dikunci 200px */
+      object-fit: cover; /* Agar tidak gepeng */
       border-radius: 12px;
       margin-bottom: 1.2rem;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -291,7 +300,11 @@
       margin: 0 auto 2rem;
     }
 
+    /* KUNCI UKURAN GAMBAR BLACK GARLIC */
     .black-garlic-image img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
       border-radius: 50%;
       box-shadow: var(--shadow);
       margin-bottom: 2rem;
@@ -448,20 +461,17 @@
         <li>✓ pH Seimbang</li>
       </ul>
 
+      <!-- HANYA 1 GAMBAR DI SINI -->
       <div class="hero-images">
         <div class="product-size-card">
-          <img src="tes/WhatsApp Image 2026-07-21 at 20.40.53.jpeg">
-          <span class="size-label">Ukuran Besar</span>
-        </div>
-        <div class="product-size-card">
-          <img src="https://placehold.co/220x220/e9d5ff/4c1d95?text=Izaura+Kecil" width="220" height="220" alt="Air Izaura ukuran kecil">
-          <span class="size-label">Ukuran Kecil</span>
+          <img src="tes/WhatsApp Image 2026-07-21 at 20.40.53.jpeg" alt="Air Izaura">
+          <span class="size-label">Produk Pilihan</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BAGIAN MANFAAT AIR IZAURA (SEKARANG 6 MANFAAT) -->
+  <!-- BAGIAN MANFAAT AIR IZAURA -->
   <section id="benefits" class="fade-in-section">
     <h2>6 Kebaikan Utama Air Izaura</h2>
     <div class="benefits-grid">
@@ -490,14 +500,12 @@
         <p>Molekul air halus (micro cluster) membuatnya lebih cepat diserap tubuh untuk memulihkan stamina.</p>
       </div>
 
-      <!-- Manfaat Baru 5 -->
       <div class="benefit-card">
         <img src="https://placehold.co/400x300/e9d5ff/4c1d95?text=Gambar+5" alt="Meningkatkan Daya Tahan">
         <h3>Meningkatkan Imunitas</h3>
         <p>Kandungan oksigen dan mineral yang optimal membantu menjaga daya tahan tubuh agar tidak mudah sakit.</p>
       </div>
 
-      <!-- Manfaat Baru 6 -->
       <div class="benefit-card">
         <img src="https://placehold.co/400x300/e9d5ff/4c1d95?text=Gambar+6" alt="Menjaga Ginjal">
         <h3>Menjaga Fungsi Ginjal</h3>
@@ -529,14 +537,13 @@
       <h2>Black Garlic - Suplemen Herbal Alami</h2>
       
       <div class="black-garlic-image">
-        <img src="https://placehold.co/250x250/e9d5ff/4c1d95?text=Foto+Black+Garlic" width="250" height="250" alt="Produk Black Garlic">
+        <img src="https://placehold.co/250x250/e9d5ff/4c1d95?text=Foto+Black+Garlic" alt="Produk Black Garlic">
       </div>
 
       <p>
         Bawang putih yang difermentasi secara alami. Proses pemeraman mengubah rasa tajam menjadi lebih lembut dan manis, membuatnya sangat aman di lambung.
       </p>
 
-      <!-- 3 Manfaat Black Garlic -->
       <div class="bg-benefits-grid">
         <div class="bg-benefit-card">
           <h4>1. Menurunkan Kolesterol</h4>
