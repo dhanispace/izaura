@@ -6,8 +6,338 @@
   <meta name="description" content="Air Izaura & Black Garlic — produk unggulan untuk keluarga Anda">
   <title>Air Izaura & Black Garlic</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@400;600;700&display=swap">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@400;500;600;700&display=swap">
+  
+  <style>
+    /* --- TEMA WARNA & RESET --- */
+    :root {
+      --primary: #4c1d95; /* Ungu Gelap */
+      --secondary: #7c3aed; /* Ungu Terang */
+      --accent: #f59e0b; /* Aksen Kuning/Emas untuk tombol */
+      --bg-light: #faf5ff; /* Latar Ungu Sangat Muda */
+      --text-dark: #2e1065;
+      --text-light: #ffffff;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      background-color: var(--bg-light);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-dark);
+    }
+
+    /* --- HEADER (TEMA UNGU) --- */
+    .site-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--text-light);
+      box-shadow: var(--shadow);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-decoration: none;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .main-nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .main-nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Toggle Menu Mobile */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .nav-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: var(--text-light);
+      transition: 0.3s;
+    }
+
+    /* --- HERO SECTION --- */
+    #hero {
+      padding: 8rem 5% 4rem;
+      background: linear-gradient(to bottom, #ede9fe, var(--bg-light));
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .hero-text p {
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .trust-badges {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .hero-images {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      align-items: flex-end;
+    }
+
+    .product-size-card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      border: 2px solid #e9d5ff;
+    }
+
+    .size-label {
+      display: block;
+      margin-top: 0.5rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* --- TOMBOL CTA --- */
+    .cta-button {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background-color: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #d97706;
+      transform: translateY(-3px);
+    }
+
+    /* --- MANFAAT SECTION (4 GAMBAR) --- */
+    #benefits {
+      padding: 4rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #benefits h2 {
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+      color: var(--primary);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .benefit-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+      border-bottom: 4px solid var(--secondary);
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .benefit-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .benefit-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: var(--secondary);
+    }
+
+    .benefit-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* --- BLACK GARLIC & OTHER SECTIONS --- */
+    #black-garlic, #contact, #location {
+      padding: 4rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #black-garlic {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      margin-bottom: 4rem;
+    }
+
+    .black-garlic-text h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .price {
+      display: inline-block;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--secondary);
+      background: #f3e8ff;
+      padding: 0.5rem 1.5rem;
+      border-radius: 30px;
+      margin: 1.5rem 0;
+    }
+
+    .black-garlic-image img {
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.5rem;
+      border: 5px solid #f3e8ff;
+    }
+
+    /* --- KONTAK --- */
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: transform 0.3s;
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .contact-btn--whatsapp { background-color: #25D366; }
+    .contact-btn--instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+
+    /* --- LOKASI --- */
+    #location iframe {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      margin-bottom: 1rem;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    /* --- ANIMASI & RESPONSIVE --- */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      will-change: opacity, visibility;
+    }
+    .fade-in-section.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: var(--shadow);
+      }
+      .main-nav.open { display: flex; }
+      .main-nav a { margin: 0.5rem 2rem; }
+      .hero-images { flex-direction: column; align-items: center; }
+      .trust-badges { flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -33,39 +363,27 @@
 
   <section id="hero" class="fade-in-section">
     <div class="hero-text">
-      <h1>Air Izaura - Kesegaran Alami untuk Keluarga Anda</h1>
+      <h1>Kesegaran Alami untuk Keluarga Anda</h1>
       <p>
         Air Izaura hadir sebagai pilihan air minum kemasan yang diproses melalui
         tahapan penyaringan berlapis untuk memastikan setiap tetesnya benar-benar
-        murni, jernih, dan bebas dari kontaminan. Diambil dari sumber mata air
-        pilihan dan diolah dengan standar higienitas yang ketat, Air Izaura tidak
-        hanya menghilangkan dahaga, tetapi juga menjaga kesehatan tubuh Anda dan
-        seluruh keluarga di rumah.
-      </p>
-      <p>
-        Kami memahami bahwa kebutuhan setiap keluarga berbeda-beda — karena itu
-        Air Izaura tersedia dalam dua pilihan ukuran, besar untuk kebutuhan
-        sehari-hari di rumah maupun kantor, dan kecil yang praktis dibawa
-        bepergian, olahraga, atau aktivitas di luar ruangan. Rasakan kesegaran
-        alami yang bisa Anda percaya, kapan pun dan di mana pun.
+        murni, jernih, dan bebas dari kontaminan.
       </p>
 
       <ul class="trust-badges">
-        <li>100% Higienis</li>
-        <li>Teruji Berkualitas</li>
-        <li>Kesegaran Terjamin</li>
+        <li>✓ 100% Higienis</li>
+        <li>✓ Teruji Berkualitas</li>
+        <li>✓ pH Seimbang</li>
       </ul>
 
       <div class="hero-images">
         <div class="product-size-card">
-          <!-- Ganti dengan foto Air Izaura ukuran besar -->
-          <img src="https://placehold.co/280x280?text=Air+Izaura+Besar" width="280" height="280" alt="Air Izaura ukuran besar">
-          <span class="size-label">Ukuran Besar</span>
+          <img src="https://placehold.co/280x280/e9d5ff/4c1d95?text=Izaura+Besar" width="280" height="280" alt="Air Izaura ukuran besar">
+          <span class="size-label">Ukuran Botol Besar</span>
         </div>
         <div class="product-size-card">
-          <!-- Ganti dengan foto Air Izaura ukuran kecil -->
-          <img src="https://placehold.co/220x220?text=Air+Izaura+Kecil" width="220" height="220" alt="Air Izaura ukuran kecil">
-          <span class="size-label">Ukuran Kecil</span>
+          <img src="https://placehold.co/220x220/e9d5ff/4c1d95?text=Izaura+Kecil" width="220" height="220" alt="Air Izaura ukuran kecil">
+          <span class="size-label">Ukuran Praktis</span>
         </div>
       </div>
 
@@ -73,33 +391,43 @@
     </div>
   </section>
 
+  <!-- BAGIAN 4 MANFAAT AIR IZAURA -->
   <section id="benefits" class="fade-in-section">
-    <h2>Kenapa Memilih Air Izaura?</h2>
+    <h2>4 Kebaikan Utama Air Izaura</h2>
     <div class="benefits-grid">
+      
+      <!-- Manfaat 1 -->
       <div class="benefit-card">
-        <!-- Ganti dengan foto sumber mata air -->
-        <img src="https://placehold.co/320x220?text=Sumber+Mata+Air" width="320" height="220" alt="Sumber mata air pegunungan Air Izaura">
-        <h3>Sumber Air Pegunungan Pilihan</h3>
-        <p>Diambil langsung dari mata air alami yang terjaga kemurniannya, memberi rasa segar alami di setiap tegukan.</p>
+        <!-- Ganti atribut src dengan link gambar Anda -->
+        <img src="https://placehold.co/400x300/e9d5ff/4c1d95?text=Gambar+pH+Seimbang" alt="Manfaat Keseimbangan pH">
+        <h3>Menyeimbangkan pH Tubuh</h3>
+        <p>Kandungan alkali pada Air Izaura membantu menetralkan kelebihan asam, menjaga lambung dan pencernaan Anda tetap nyaman dan sehat.</p>
       </div>
+      
+      <!-- Manfaat 2 -->
       <div class="benefit-card">
-        <!-- Ganti dengan foto proses penyaringan/QC -->
-        <img src="https://placehold.co/320x220?text=Proses+Higienis" width="320" height="220" alt="Proses penyaringan higienis Air Izaura">
-        <h3>Proses Higienis Berlapis</h3>
-        <p>Melalui filtrasi multi-tahap dan pengujian ketat, memastikan air yang Anda minum benar-benar bersih dan aman.</p>
+        <!-- Ganti atribut src dengan link gambar Anda -->
+        <img src="https://placehold.co/400x300/e9d5ff/4c1d95?text=Gambar+Detoksifikasi" alt="Manfaat Detoksifikasi">
+        <h3>Detoksifikasi Alami</h3>
+        <p>Membantu melancarkan sistem metabolisme untuk membuang racun (toksin) dari dalam tubuh secara efektif melalui pembuangan alami.</p>
       </div>
+      
+      <!-- Manfaat 3 -->
       <div class="benefit-card">
-        <!-- Ganti dengan foto botol dibawa beraktivitas -->
-        <img src="https://placehold.co/320x220?text=Praktis+Dibawa" width="320" height="220" alt="Air Izaura praktis dibawa beraktivitas">
-        <h3>Praktis Dibawa ke Mana Saja</h3>
-        <p>Kemasan ringan dan mudah digenggam, cocok menemani aktivitas harian, olahraga, hingga perjalanan jauh.</p>
+        <!-- Ganti atribut src dengan link gambar Anda -->
+        <img src="https://placehold.co/400x300/e9d5ff/4c1d95?text=Gambar+Antioksidan" alt="Manfaat Kaya Antioksidan">
+        <h3>Kaya Antioksidan</h3>
+        <p>Kandungan airnya didesain untuk membantu menangkal radikal bebas, merawat sel-sel kulit dari dalam agar tetap awet muda dan segar.</p>
       </div>
+      
+      <!-- Manfaat 4 -->
       <div class="benefit-card">
-        <!-- Ganti dengan foto keluarga menikmati Air Izaura -->
-        <img src="https://placehold.co/320x220?text=Untuk+Keluarga" width="320" height="220" alt="Air Izaura untuk seluruh keluarga">
-        <h3>Terjangkau untuk Seluruh Keluarga</h3>
-        <p>Harga bersahabat dengan kualitas premium, menjadikan hidrasi sehat bisa dinikmati setiap hari oleh semua anggota keluarga.</p>
+        <!-- Ganti atribut src dengan link gambar Anda -->
+        <img src="https://placehold.co/400x300/e9d5ff/4c1d95?text=Gambar+Hidrasi" alt="Manfaat Hidrasi Maksimal">
+        <h3>Hidrasi Lebih Cepat</h3>
+        <p>Memiliki molekul air yang sangat halus (micro cluster), sehingga cairan lebih cepat diserap oleh sel tubuh untuk memulihkan stamina.</p>
       </div>
+
     </div>
   </section>
 
@@ -107,49 +435,31 @@
     <div class="black-garlic-text">
       <h2>Black Garlic - Suplemen Herbal Alami</h2>
       <p>
-        Black Garlic adalah bawang putih yang difermentasi secara alami melalui
-        proses pemeraman panjang, mengubah rasa tajam bawang putih biasa menjadi
-        lebih lembut, sedikit manis, dan kaya akan senyawa antioksidan seperti
-        S-allylcysteine yang jauh lebih tinggi dibanding bawang putih segar.
-        Proses fermentasi ini juga membuatnya lebih mudah dicerna dan ramah di
-        lambung, sehingga cocok dikonsumsi rutin oleh berbagai kalangan usia.
+        Black Garlic adalah bawang putih yang difermentasi secara alami. Proses pemeraman panjang ini mengubah rasa tajam menjadi lebih lembut dan sedikit manis, serta meningkatkan senyawa antioksidan.
       </p>
       <p>
-        Dikenal secara turun-temurun sebagai suplemen herbal yang membantu
-        menjaga daya tahan tubuh, melindungi sel dari radikal bebas, serta
-        mendukung kesehatan jantung dan sistem peredaran darah, Black Garlic
-        menjadi pelengkap gaya hidup sehat yang praktis dikonsumsi setiap hari.
-        Setiap butir diproses dengan standar kebersihan tinggi untuk memastikan
-        kualitas dan khasiatnya tetap terjaga hingga sampai ke tangan Anda.
+        Cocok untuk menjaga daya tahan tubuh, melindungi sel dari radikal bebas, serta mendukung kesehatan jantung dan sistem peredaran darah. Praktis dikonsumsi setiap hari oleh semua kalangan usia.
       </p>
       <div class="price-card">
-        <!-- Ganti dengan harga produk Black Garlic -->
         <span class="price">Rp 150.000 / botol</span>
       </div>
       <div class="black-garlic-image">
-        <!-- Ganti dengan foto produk Black Garlic -->
-        <img src="https://placehold.co/250x250?text=Black+Garlic" width="250" height="250" alt="Produk Suplemen Herbal Black Garlic Bawang Hitam">
+        <img src="https://placehold.co/250x250/e9d5ff/4c1d95?text=Foto+Black+Garlic" width="250" height="250" alt="Produk Black Garlic">
       </div>
-      <a href="#contact" class="cta-button">Pesan Sekarang</a>
+      <a href="#contact" class="cta-button">Pesan Black Garlic</a>
     </div>
   </section>
 
   <section id="contact" class="fade-in-section">
     <h2>Hubungi Kami</h2>
     <div class="contact-buttons">
-      <!-- Ganti 62xxxxxxxxxx dengan nomor WA aktif -->
-      <a href="https://wa.me/62363957400" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn--whatsapp" aria-label="Hubungi kami via WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
+      <a href="https://wa.me/62363957400" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn--whatsapp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         <span>WhatsApp</span>
       </a>
 
-      <!-- Ganti nama_akun dengan username Instagram aktif -->
-      <a href="https://instagram.com/surnitaa_" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn--instagram" aria-label="Ikuti kami di Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-        </svg>
+      <a href="https://instagram.com/surnitaa_" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn--instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         <span>Instagram</span>
       </a>
     </div>
@@ -157,119 +467,62 @@
 
   <section id="location" class="fade-in-section">
     <h2>Lokasi Kami</h2>
-    <!-- Ganti src dengan URL embed Google Maps Anda -->
     <iframe
       loading="lazy"
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11284.605501190139!2d101.46087186522468!3d0.42115210366865297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a5bdfee2a56f%3A0x2da648857a30c8da!2sCFF7%2B22P%2C%20Jl.%20Rengas%201%2C%20Pandau%20Jaya%2C%20Kec.%20Siak%20Hulu%2C%20Kabupaten%20Kampar%2C%20Riau%2028284!5e0!3m2!1sen!2sid!4v1784624006926!5m2!1sen!2sid"
-      width="600"
-      height="450"
+      height="400"
       style="border:0;"
       allowfullscreen=""
       referrerpolicy="strict-origin-when-cross-origin"
       title="Lokasi Toko Air Izaura">
     </iframe>
-    <p class="map-fallback">Peta akan ditampilkan di sini</p>
-    <address>
+    <address style="margin-top: 15px; font-weight: 500; color: var(--text-dark);">
       Jl. Rengas I, Blok C41, No. 27, Desa Pandau Jaya, Kec. Siak Hulu, Kab. Kampar, Prov. Riau
     </address>
   </section>
 
   <footer>
-    &copy; <span id="year"></span> Air Izaura
+    &copy; <span id="year"></span> Air Izaura & Black Garlic - Kesegaran & Kesehatan Alami.
   </footer>
 
   <script>
-    // Tahun copyright dinamis
+    // Tahun dinamis
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Smooth scroll semua tombol CTA ke #contact
+    // Smooth scroll CTA
     document.querySelectorAll('.cta-button').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const target = document.querySelector('#contact');
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        document.querySelector('#contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 
-    // Toggle menu navigasi mobile
+    // Toggle menu
     const navToggle = document.getElementById('navToggle');
     const mainNav = document.getElementById('mainNav');
+    navToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+    });
 
-    if (navToggle && mainNav) {
-      navToggle.addEventListener('click', () => {
-        const isOpen = mainNav.classList.toggle('open');
-        navToggle.classList.toggle('open', isOpen);
-        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-
-      mainNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mainNav.classList.remove('open');
-          navToggle.classList.remove('open');
-          navToggle.setAttribute('aria-expanded', 'false');
-        });
-      });
-    }
-
-    // Smooth scroll untuk link navigasi header
+    // Smooth scroll Nav
     document.querySelectorAll('.main-nav a').forEach(link => {
       link.addEventListener('click', (e) => {
+        e.preventDefault();
+        mainNav.classList.remove('open');
         const targetId = link.getAttribute('href');
-        const target = document.querySelector(targetId);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        document.querySelector(targetId).scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 
-    // Header dapat shadow/background solid saat halaman discroll
-    const siteHeader = document.getElementById('siteHeader');
-    if (siteHeader) {
-      const toggleHeaderScrolled = () => {
-        siteHeader.classList.toggle('scrolled', window.scrollY > 12);
-      };
-      toggleHeaderScrolled();
-      window.addEventListener('scroll', toggleHeaderScrolled, { passive: true });
-    }
-
-    // Fade-in on scroll via IntersectionObserver
+    // Efek Fade In
     const fadeObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.2 });
-
+    }, { threshold: 0.15 });
     document.querySelectorAll('.fade-in-section').forEach(el => fadeObserver.observe(el));
-
-    // Validasi konfigurasi — sembunyikan tombol jika masih placeholder
-    document.querySelectorAll('a[href*="wa.me"]').forEach(waBtn => {
-      if (waBtn.getAttribute('href').includes('62xxxxxxxxxx')) {
-        waBtn.style.display = 'none';
-      }
-    });
-
-    document.querySelectorAll('a[href*="instagram.com"]').forEach(igBtn => {
-      if (igBtn.getAttribute('href').includes('nama_akun')) {
-        igBtn.style.display = 'none';
-      }
-    });
-
-    // Validasi Maps iframe — tampilkan fallback jika src kosong
-    const mapsIframe = document.querySelector('iframe');
-    const mapFallback = document.querySelector('.map-fallback');
-    if (mapsIframe && mapFallback) {
-      const iframeSrc = mapsIframe.getAttribute('src');
-      if (!iframeSrc || iframeSrc.trim() === '') {
-        mapsIframe.style.display = 'none';
-        mapFallback.style.display = 'block';
-      }
-    }
   </script>
-
 </body>
 </html>
