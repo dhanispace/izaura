@@ -3,28 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Agen Izaura Pandau Jaya — Izaura Air Sehat Indonesia">
+  <meta name="description" content="Agen Izaura Pandau Jaya — Izaura air pH tinggi, Black Garlic, Susu Kambing Etawa & Pupuk Organik untuk keluarga Anda">
   <title>Agen Izaura Pandau Jaya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@400;500;600;700&display=swap">
-  
+
   <style>
-    /* --- TEMA WARNA & RESET --- */
     :root {
-      --primary: #4c1d95; /* Ungu Gelap */
-      --secondary: #7c3aed; /* Ungu Terang */
-      --accent: #f59e0b; /* Aksen Kuning/Emas untuk tombol */
-      --bg-light: #faf5ff; /* Latar Ungu Sangat Muda */
+      --primary: #4c1d95;
+      --secondary: #7c3aed;
+      --accent: #f59e0b;
+      --bg-light: #faf5ff;
       --text-dark: #2e1065;
       --text-light: #ffffff;
+      --green: #16a34a;
+      --milk: #d97706;
       --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -33,390 +30,126 @@
       line-height: 1.6;
     }
 
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--text-dark);
-    }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--text-dark); }
 
     /* --- HEADER --- */
     .site-header {
-      position: fixed;
-      top: 0;
-      width: 100%;
+      position: fixed; top: 0; width: 100%;
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: var(--text-light);
       box-shadow: var(--shadow);
       z-index: 1000;
-      transition: all 0.3s ease;
     }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; max-width: 1200px; margin: 0 auto; }
+    .brand { font-size: 1.4rem; font-weight: 700; color: var(--text-light); text-decoration: none; font-family: 'Playfair Display', serif; line-height: 1.2; }
+    .brand span { color: var(--accent); }
+    .main-nav { display: flex; align-items: center; }
+    .main-nav a { color: var(--text-light); text-decoration: none; margin-left: 1.3rem; font-weight: 500; transition: color 0.3s; white-space: nowrap; }
+    .main-nav a:hover { color: var(--accent); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .nav-toggle span { width: 25px; height: 3px; background-color: var(--text-light); transition: 0.3s; }
 
-    .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 5%;
-      max-width: 1200px;
-      margin: 0 auto;
+    /* --- HERO --- */
+    #hero { padding: 8rem 5% 4rem; background: linear-gradient(to bottom, #ede9fe, var(--bg-light)); text-align: center; }
+    .hero-text .slogan {
+      display: inline-block; background-color: var(--primary); color: var(--text-light);
+      font-weight: 600; letter-spacing: 0.5px; padding: 0.4rem 1.2rem; border-radius: 30px;
+      margin-bottom: 1rem; font-size: 0.95rem;
     }
-
-    .brand {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-light);
-      text-decoration: none;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .brand span {
-      color: var(--accent);
-    }
-
-    .main-nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      margin-left: 1.2rem;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.3s;
-    }
-
-    .main-nav a:hover {
-      color: var(--accent);
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .nav-toggle span {
-      width: 25px;
-      height: 3px;
-      background-color: var(--text-light);
-      transition: 0.3s;
-    }
-
-    /* --- HERO SECTION --- */
-    #hero {
-      padding: 8rem 5% 4rem;
-      background: linear-gradient(to bottom, #ede9fe, var(--bg-light));
-      text-align: center;
-    }
-
-    .hero-text h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-
-    .hero-text p {
-      max-width: 800px;
-      margin: 0 auto 1.5rem;
-      font-size: 1.05rem;
-    }
-
-    .trust-badges {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .hero-images {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
-      align-items: flex-end;
-    }
-
+    .hero-text h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary); }
+    .hero-text p { max-width: 800px; margin: 0 auto 1.5rem; font-size: 1.05rem; }
+    .trust-badges { list-style: none; display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; color: var(--primary); font-weight: 600; }
     .product-size-card {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      border: 2px solid #e9d5ff;
+      position: relative; background: #fff; padding: 1rem 1.2rem 1.3rem; border-radius: 18px;
+      box-shadow: var(--shadow); border: 1px solid #e9d5ff; overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
-    /* KUNCI UKURAN GAMBAR HERO */
-    .product-size-card img {
-      width: 340px;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 8px;
+    .product-size-card:hover { transform: translateY(-8px); box-shadow: 0 16px 28px -8px rgba(76,29,149,0.28); }
+    .product-size-card img { width: 260px; height: 320px; object-fit: cover; border-radius: 12px; display: block; }
+    .product-size-card .ribbon {
+      position: absolute; top: 16px; left: -38px; transform: rotate(-45deg);
+      background: linear-gradient(135deg, var(--accent), #d97706); color: #fff;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 4px 44px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
+    .size-label { display: block; margin-top: 0.8rem; font-weight: 600; color: var(--primary); text-align: center; }
 
-    .size-label {
-      display: block;
-      margin-top: 0.5rem;
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    /* --- TOMBOL CTA --- */
+    /* --- CTA --- */
     .cta-button {
-      display: inline-block;
-      padding: 0.8rem 2rem;
-      background-color: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
-      transition: transform 0.3s, background-color 0.3s;
-      margin-top: 1rem;
+      display: inline-block; padding: 0.8rem 2rem; background-color: var(--accent); color: #fff;
+      text-decoration: none; font-weight: 600; border-radius: 50px; font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4); transition: transform 0.3s, background-color 0.3s; margin-top: 1rem;
     }
+    .cta-button:hover { background-color: #d97706; transform: translateY(-3px); }
 
-    .cta-button:hover {
-      background-color: #d97706;
-      transform: translateY(-3px);
-    }
+    /* --- MANFAAT AIR IZAURA --- */
+    #benefits { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; text-align: center; }
+    #benefits h2 { font-size: 2.2rem; margin-top: 0.5rem; margin-bottom: 1.5rem; color: var(--primary); }
+    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2.5rem; }
+    .size-showcase { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 0 auto 1.5rem; }
+    .benefit-card { background: #fff; padding: 1.5rem; border-radius: 16px; box-shadow: var(--shadow); transition: transform 0.3s; border-bottom: 4px solid var(--secondary); }
+    .benefit-card:hover { transform: translateY(-10px); }
+    .benefit-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .benefit-card h3 { font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--secondary); }
+    .benefit-card p { font-size: 0.95rem; color: #555; }
 
-    /* --- MANFAAT SECTION (IZAURA) --- */
-    #benefits {
-      padding: 4rem 5%;
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
+    /* --- HARGA --- */
+    .pricing-box { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 2rem; border-radius: 16px; box-shadow: var(--shadow); max-width: 700px; margin: 0 auto 2rem auto; transition: transform 0.3s ease; }
+    .pricing-box h3 { color: white; margin-bottom: 1.5rem; font-size: 1.4rem; }
+    .pricing-group { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 0.5rem; }
+    .pricing-group .pricing-box { flex: 1 1 280px; max-width: 320px; margin: 0; }
+    .pricing-group .pricing-box:hover { transform: translateY(-6px); }
+    .pricing-box--accent { background: linear-gradient(135deg, var(--accent), #b45309); }
+    .save-badge { display: inline-block; background: rgba(255,255,255,0.28); font-size: 0.65rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-left: 8px; vertical-align: middle; text-transform: uppercase; letter-spacing: 0.5px; }
+    .price-list { display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
+    .price-item { background: rgba(255, 255, 255, 0.12); border: 2px solid rgba(255, 255, 255, 0.3); padding: 1rem 1.5rem; border-radius: 12px; text-align: center; }
+    .price-item span { display: block; font-size: 0.9rem; margin-bottom: 0.5rem; opacity: 0.9; }
+    .price-item strong { display: block; font-size: 1.5rem; color: var(--accent); }
+    .pricing-box--accent .price-item strong { color: #ffffff; }
 
-    #benefits h2 {
-      font-size: 2.2rem;
-      margin-bottom: 2.5rem;
-      color: var(--primary);
+    /* --- PRODUK (Black Garlic / Susu / Pupuk) --- */
+    #black-garlic, #susu, #pupuk { padding: 4rem 5%; max-width: 1200px; margin: 0 auto 4rem auto; text-align: center; background: #fff; border-radius: 20px; box-shadow: var(--shadow); }
+    .product-text h2 { color: var(--primary); margin-bottom: 1rem; }
+    .product-text > p { max-width: 800px; margin: 0 auto 2rem; }
+    .product-photo-card {
+      position: relative; display: inline-block; background: #fff; padding: 1rem 1rem 1.6rem; border-radius: 18px;
+      box-shadow: var(--shadow); margin-bottom: 2.4rem; border-top: 6px solid var(--card-accent, var(--primary));
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .product-photo-card:hover { transform: translateY(-6px); box-shadow: 0 16px 28px -8px rgba(0,0,0,0.2); }
+    .product-photo-card img { width: 280px; height: 280px; object-fit: cover; border-radius: 12px; display: block; }
+    .product-photo-card .photo-tag {
+      position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--card-accent, var(--primary)); color: #fff; font-size: 0.75rem; font-weight: 600;
+      padding: 5px 16px; border-radius: 20px; white-space: nowrap; box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+    .bg-benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; text-align: left; }
+    .bg-benefit-card { background: #faf5ff; padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--accent); }
+    .bg-benefit-card h4 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.1rem; }
+    .bg-benefit-card p { font-size: 0.9rem; color: #444; margin: 0; }
+    #susu .bg-benefit-card { border-left-color: var(--milk); }
+    #pupuk .bg-benefit-card { border-left-color: var(--green); }
 
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .benefit-card {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      transition: transform 0.3s;
-      border-bottom: 4px solid var(--secondary);
-    }
-
-    .benefit-card:hover {
-      transform: translateY(-10px);
-    }
-
-    /* KUNCI UKURAN GAMBAR MANFAAT */
-    .benefit-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 1.2rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .benefit-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.8rem;
-      color: var(--secondary);
-    }
-
-    .benefit-card p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    /* --- HARGA BOX --- */
-    .pricing-box {
-      background: linear-gradient(135deg, var(--secondary), var(--primary));
-      color: white;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      max-width: 700px;
-      margin: 0 auto 2rem auto;
-    }
-
-    .pricing-box h3 {
-      color: white;
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-    }
-
-    .price-list {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .price-item {
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      padding: 1rem 2rem;
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    .price-item span {
-      display: block;
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-      opacity: 0.9;
-    }
-
-    .price-item strong {
-      display: block;
-      font-size: 1.6rem;
-      color: var(--accent);
-    }
-
-    /* --- GENERIC PRODUCT SECTION (Untuk Black Garlic, Susu, dan Pupuk) --- */
-    .product-section {
-      padding: 4rem 5%;
-      max-width: 1200px;
-      margin: 0 auto 4rem auto;
-      text-align: center;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .product-section h2 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-    
-    .product-section > p {
-      max-width: 800px;
-      margin: 0 auto 2rem;
-    }
-
-    .product-image img {
-      width: 250px;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: var(--shadow);
-      margin-bottom: 2rem;
-      border: 5px solid #f3e8ff;
-    }
-
-    .product-benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-      text-align: left;
-    }
-
-    .product-benefit-card {
-      background: #faf5ff;
-      padding: 1.5rem;
-      border-radius: 12px;
-      border-left: 4px solid var(--accent);
-    }
-    
-    .product-benefit-card h4 {
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-      font-size: 1.1rem;
-    }
-    
-    .product-benefit-card p {
-      font-size: 0.9rem;
-      color: #444;
-      margin: 0;
-    }
-
-    /* --- KONTAK & LOKASI --- */
-    #contact, #location {
-      padding: 4rem 5%;
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .contact-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .contact-btn {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 0.8rem 1.5rem;
-      border-radius: 30px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: 600;
-      transition: transform 0.3s;
-    }
-
-    .contact-btn:hover {
-      transform: translateY(-3px);
-    }
-
+    /* --- KONTAK / LOKASI --- */
+    #contact, #location { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; text-align: center; }
+    .contact-buttons { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
+    .contact-btn { display: flex; align-items: center; gap: 10px; padding: 0.8rem 1.5rem; border-radius: 30px; text-decoration: none; color: #fff; font-weight: 600; transition: transform 0.3s; }
+    .contact-btn:hover { transform: translateY(-3px); }
     .contact-btn--whatsapp { background-color: #25D366; }
     .contact-btn--instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+    #location iframe { width: 100%; max-width: 800px; border-radius: 16px; box-shadow: var(--shadow); margin-bottom: 1rem; }
 
-    #location iframe {
-      width: 100%;
-      max-width: 800px;
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      margin-bottom: 1rem;
-    }
+    footer { background: var(--primary); color: #fff; text-align: center; padding: 2rem; margin-top: 3rem; }
 
-    /* --- FOOTER --- */
-    footer {
-      background: var(--primary);
-      color: #fff;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
-    }
-
-    /* --- ANIMASI & RESPONSIVE --- */
-    .fade-in-section {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      will-change: opacity, visibility;
-    }
-    .fade-in-section.visible {
-      opacity: 1;
-      transform: none;
-    }
+    .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; will-change: opacity, visibility; }
+    .fade-in-section.visible { opacity: 1; transform: none; }
 
     @media (max-width: 768px) {
       .nav-toggle { display: flex; }
-      .main-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--primary);
-        flex-direction: column;
-        padding: 1rem 0;
-        box-shadow: var(--shadow);
-      }
+      .main-nav { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--primary); flex-direction: column; padding: 1rem 0; box-shadow: var(--shadow); }
       .main-nav.open { display: flex; }
       .main-nav a { margin: 0.5rem 2rem; }
-      .hero-images { flex-direction: column; align-items: center; }
+      .size-showcase { flex-direction: column; align-items: center; }
       .trust-badges { flex-direction: column; gap: 0.5rem; }
       .price-list { flex-direction: column; gap: 1rem; }
     }
@@ -426,208 +159,66 @@
 
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
-      <a href="#hero" class="brand">Agen Izaura<span>.</span></a>
-
+      <a href="#hero" class="brand">Agen Izaura<span> Pandau Jaya</span></a>
       <nav class="main-nav" id="mainNav">
         <a href="#hero">Beranda</a>
         <a href="#benefits">Air Izaura</a>
         <a href="#black-garlic">Black Garlic</a>
-        <a href="#susu-etawa">Susu Etawa</a>
-        <a href="#pupuk">Pupuk Organik</a>
+        <a href="#susu">Susu Etawa</a>
+        <a href="#pupuk">Pupuk</a>
         <a href="#contact">Kontak</a>
+        <a href="#location">Lokasi</a>
       </nav>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi"><span></span><span></span><span></span></button>
     </div>
   </header>
 
   <section id="hero" class="fade-in-section">
     <div class="hero-text">
-      <h1>Izaura Air Sehat Indonesia</h1>
-      <p>
-        Air Izaura hadir sebagai pilihan air minum kemasan yang diproses melalui
-        tahapan penyaringan berlapis untuk memastikan setiap tetesnya benar-benar
-        murni, jernih, dan bebas dari kontaminan.
-      </p>
-
-      <ul class="trust-badges">
-        <li>✓ 100% Higienis</li>
-        <li>✓ Teruji Berkualitas</li>
-        <li>✓ pH Seimbang</li>
-      </ul>
-
-      <div class="hero-images">
-        <div class="product-size-card">
-          <img src="tes/WhatsApp Image 2026-07-21 at 20.38.13.jpeg" alt="Air Izaura">
-          <span class="size-label">Produk Pilihan</span>
-        </div>
-      </div>
+      <span class="slogan">Izaura Air Sehat Indonesia</span>
+      <h1>Kesegaran Alami untuk Keluarga Anda</h1>
+      <p>Izaura adalah air minum ber-pH tinggi yang diproses melalui tahapan penyaringan berlapis, didesain sesuai kebutuhan tubuh sehingga setiap tetesnya benar-benar murni, jernih, dan bebas dari kontaminan.</p>
+      <ul class="trust-badges"><li>✓ 100% Higienis</li><li>✓ Teruji Berkualitas</li><li>✓ pH Tinggi</li></ul>
     </div>
   </section>
 
-  <!-- BAGIAN MANFAAT AIR IZAURA -->
   <section id="benefits" class="fade-in-section">
+
+    <!-- Tempat foto ukuran produk: ganti nilai "src" pada gambar di bawah dengan path foto Anda.
+         Ukuran kotak sudah dikunci lewat CSS (.product-size-card img), jadi berapa pun ukuran foto aslinya,
+         tampilannya akan tetap pas di bingkai ini dan tidak berubah-ubah. -->
+    <div class="size-showcase">
+      <div class="product-size-card">
+        <span class="ribbon">Besar</span>
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='320'><rect width='100%25' height='100%25' fill='%23f3e8ff'/><text x='50%25' y='48%25' font-family='sans-serif' font-size='16' fill='%237c3aed' text-anchor='middle'>Foto Ukuran</text><text x='50%25' y='58%25' font-family='sans-serif' font-size='16' fill='%237c3aed' text-anchor='middle'>Besar</text></svg>" alt="Air Izaura Ukuran Besar">
+        <span class="size-label">Ukuran Besar (isi 12)</span>
+      </div>
+      <div class="product-size-card">
+        <span class="ribbon">Kecil</span>
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='320'><rect width='100%25' height='100%25' fill='%23f3e8ff'/><text x='50%25' y='48%25' font-family='sans-serif' font-size='16' fill='%237c3aed' text-anchor='middle'>Foto Ukuran</text><text x='50%25' y='58%25' font-family='sans-serif' font-size='16' fill='%237c3aed' text-anchor='middle'>Kecil</text></svg>" alt="Air Izaura Ukuran Kecil">
+        <span class="size-label">Ukuran Kecil (isi 16)</span>
+      </div>
+    </div>
+
     <h2>6 Kebaikan Utama Air Izaura</h2>
-    <div class="benefits-grid">
-      
-      <div class="benefit-card">
-        <img src="tes/1.jpeg" alt="Menyeimbangkan pH Tubuh">
-        <h3>Menyeimbangkan pH Tubuh</h3>
-        <p>Kandungan alkali pada Air Izaura membantu menetralkan asam berlebih, menjaga kenyamanan lambung.</p>
-      </div>
-      
-      <div class="benefit-card">
-        <img src="tes/2.jpeg" alt="Detoksifikasi Alami">
-        <h3>Detoksifikasi Alami</h3>
-        <p>Melancarkan sistem metabolisme untuk membantu membuang racun dari dalam tubuh secara efektif.</p>
-      </div>
-      
-      <div class="benefit-card">
-        <img src="tes/3.jpeg" alt="Kaya Antioksidan">
-        <h3>Kaya Antioksidan</h3>
-        <p>Membantu menangkal radikal bebas dan merawat sel-sel dari dalam agar tubuh tetap segar.</p>
-      </div>
-      
-      <div class="benefit-card">
-        <img src="tes/4.jpeg" alt="Hidrasi Lebih Cepat">
-        <h3>Hidrasi Lebih Cepat</h3>
-        <p>Molekul air halus (micro cluster) membuatnya lebih cepat diserap tubuh untuk memulihkan stamina.</p>
-      </div>
-
-      <div class="benefit-card">
-        <img src="tes/5.jpeg" alt="Meningkatkan Daya Tahan">
-        <h3>Meningkatkan Imunitas</h3>
-        <p>Kandungan oksigen dan mineral yang optimal membantu menjaga daya tahan tubuh agar tidak mudah sakit.</p>
-      </div>
-
-      <div class="benefit-card">
-        <img src="tes/6.jpeg" alt="Menjaga Ginjal">
-        <h3>Menjaga Fungsi Ginjal</h3>
-        <p>Kemurnian air tanpa endapan mineral berbahaya meringankan kerja ginjal untuk pemakaian jangka panjang.</p>
-      </div>
-
+    <div class="benefits-grid" id="waterBenefitsGrid"></div>
     </div>
 
-    <!-- Harga Air Izaura -->
-    <div class="pricing-box">
-      <h3>Daftar Harga Air Izaura</h3>
-      <div class="price-list">
-        <div class="price-item">
-          <span>Ukuran Besar (isi 12)</span>
-          <strong>Rp 90.000</strong>
-        </div>
-        <div class="price-item">
-          <span>Ukuran Kecil (isi 16)</span>
-          <strong>Rp 100.000</strong>
-        </div>
-      </div>
-      <a href="#contact" class="cta-button">Pesan Air Izaura</a>
-    </div>
+    <div id="waterPricingBox"></div>
   </section>
 
-  <!-- BAGIAN BLACK GARLIC -->
-  <section id="black-garlic" class="product-section fade-in-section">
-    <div class="product-text">
-      <h2>Black Garlic - Suplemen Herbal Alami</h2>
-      
-      <div class="product-image">
-        <img src="tes/WhatsApp Image 2026-07-21 at 20.40.53.jpeg" alt="Black Garlic">
-      </div>
-
-      <p>
-        Bawang putih yang difermentasi secara alami. Proses pemeraman mengubah rasa tajam menjadi lebih lembut dan manis, membuatnya sangat aman di lambung.
-      </p>
-
-      <div class="product-benefits-grid">
-        <div class="product-benefit-card">
-          <h4>1. Menurunkan Kolesterol</h4>
-          <p>Membantu mengurangi kadar kolesterol jahat (LDL) dan menjaga kesehatan peredaran darah serta organ jantung Anda.</p>
-        </div>
-        <div class="product-benefit-card">
-          <h4>2. Tinggi Antioksidan</h4>
-          <p>Kandungan senyawa S-allylcysteine yang jauh lebih tinggi membantu melindungi sel tubuh dari kerusakan akibat radikal bebas.</p>
-        </div>
-        <div class="product-benefit-card">
-          <h4>3. Menstabilkan Gula Darah</h4>
-          <p>Membantu mengontrol kadar gula dalam darah dan meningkatkan metabolisme alami tubuh dengan konsumsi secara rutin.</p>
-        </div>
-      </div>
-
-      <a href="#contact" class="cta-button">Pesan Black Garlic</a>
-    </div>
+  <section id="black-garlic" class="fade-in-section">
+    <div class="product-text" id="blackGarlicSection"></div>
   </section>
 
-  <!-- BAGIAN SUSU KAMBING ETAWA -->
-  <section id="susu-etawa" class="product-section fade-in-section" style="background-color: var(--bg-light); box-shadow: none;">
-    <div class="product-text">
-      <h2>Susu Kambing Etawa</h2>
-      
-      <div class="product-image">
-        <!-- Silakan ubah lokasi gambar dengan gambar susu kambing Anda -->
-        <img src="tes/susu-kambing-etawa.jpeg" alt="Susu Kambing Etawa" onerror="this.src='https://via.placeholder.com/250?text=Foto+Susu+Etawa'">
-      </div>
-
-      <p>
-        Pilihan nutrisi harian yang kaya manfaat. Susu kambing etawa dikenal lebih mudah dicerna dan tidak memicu alergi jika dibandingkan dengan susu sapi.
-      </p>
-
-      <div class="product-benefits-grid">
-        <div class="product-benefit-card" style="background: #fff;">
-          <h4>1. Menyehatkan Pernapasan</h4>
-          <p>Sangat baik dikonsumsi untuk membantu terapi penyembuhan masalah pernapasan seperti asma, TBC, hingga bronkitis.</p>
-        </div>
-        <div class="product-benefit-card" style="background: #fff;">
-          <h4>2. Kepadatan Tulang & Sendi</h4>
-          <p>Kaya akan kalsium dan fosfor yang penting untuk mencegah pengeroposan tulang dan meredakan nyeri sendi.</p>
-        </div>
-        <div class="product-benefit-card" style="background: #fff;">
-          <h4>3. Aman Bagi Pencernaan</h4>
-          <p>Memiliki butiran lemak yang lebih halus sehingga sangat mudah dicerna oleh lambung tanpa menimbulkan rasa begah.</p>
-        </div>
-      </div>
-
-      <a href="#contact" class="cta-button">Pesan Susu Etawa</a>
-    </div>
+  <section id="susu" class="fade-in-section">
+    <div class="product-text" id="susuSection"></div>
   </section>
 
-  <!-- BAGIAN PUPUK ORGANIK -->
-  <section id="pupuk" class="product-section fade-in-section">
-    <div class="product-text">
-      <h2>Pupuk Organik Majemuk Hayati</h2>
-      
-      <div class="product-image">
-        <!-- Silakan ubah lokasi gambar dengan gambar pupuk Anda -->
-        <img src="tes/pupuk-organik.jpeg" alt="Pupuk Organik Majemuk Hayati" onerror="this.src='https://via.placeholder.com/250?text=Foto+Pupuk'">
-      </div>
-
-      <p>
-        Inovasi pertanian untuk hasil bumi yang lebih berkualitas. Mengandung mikroorganisme baik yang siap mengembalikan kesuburan tanah Anda.
-      </p>
-
-      <div class="product-benefits-grid">
-        <div class="product-benefit-card">
-          <h4>1. Memperbaiki Kualitas Tanah</h4>
-          <p>Membantu menggemburkan dan mengembalikan unsur hara alami tanah yang rusak akibat penggunaan kimia berlebihan.</p>
-        </div>
-        <div class="product-benefit-card">
-          <h4>2. Memacu Pertumbuhan</h4>
-          <p>Menyediakan nutrisi esensial bagi tanaman yang diserap lebih cepat, merangsang akar, batang, daun, dan buah.</p>
-        </div>
-        <div class="product-benefit-card">
-          <h4>3. Ramah Lingkungan</h4>
-          <p>Berbahan dasar organik 100% sehingga aman bagi lingkungan, hasil panen pun menjadi lebih sehat dan bebas residu kimia.</p>
-        </div>
-      </div>
-
-      <a href="#contact" class="cta-button">Pesan Pupuk Organik</a>
-    </div>
+  <section id="pupuk" class="fade-in-section">
+    <div class="product-text" id="pupukSection"></div>
   </section>
 
-  <!-- KONTAK -->
   <section id="contact" class="fade-in-section">
     <h2>Hubungi Kami</h2>
     <div class="contact-buttons">
@@ -635,7 +226,6 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         <span>WhatsApp</span>
       </a>
-
       <a href="https://instagram.com/surnitaa_" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn--instagram">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         <span>Instagram</span>
@@ -643,58 +233,176 @@
     </div>
   </section>
 
-  <!-- LOKASI -->
   <section id="location" class="fade-in-section">
     <h2>Lokasi Kami</h2>
-    <iframe
-      loading="lazy"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11284.605501190139!2d101.46087186522468!3d0.42115210366865297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a5bdfee2a56f%3A0x2da648857a30c8da!2sCFF7%2B22P%2C%20Jl.%20Rengas%201%2C%20Pandau%20Jaya%2C%20Kec.%20Siak%20Hulu%2C%20Kabupaten%20Kampar%2C%20Riau%2028284!5e0!3m2!1sen!2sid!4v1784624006926!5m2!1sen!2sid"
-      height="400"
-      style="border:0;"
-      allowfullscreen=""
-      referrerpolicy="strict-origin-when-cross-origin"
-      title="Lokasi Toko Agen Izaura">
-    </iframe>
-    <address style="margin-top: 15px; font-weight: 500; color: var(--text-dark);">
-      Jl. Rengas I, Blok C41, No. 27, Desa Pandau Jaya, Kec. Siak Hulu, Kab. Kampar, Prov. Riau
-    </address>
+    <iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11284.605501190139!2d101.46087186522468!3d0.42115210366865297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a5bdfee2a56f%3A0x2da648857a30c8da!2sCFF7%2B22P%2C%20Jl.%20Rengas%201%2C%20Pandau%20Jaya%2C%20Kec.%20Siak%20Hulu%2C%20Kabupaten%20Kampar%2C%20Riau%2028284!5e0!3m2!1sen!2sid!4v1784624006926!5m2!1sen!2sid" height="400" style="border:0;" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin" title="Lokasi Toko Air Izaura"></iframe>
+    <address style="margin-top: 15px; font-weight: 500; color: var(--text-dark);">Jl. Rengas I, Blok C41, No. 27, Desa Pandau Jaya, Kec. Siak Hulu, Kab. Kampar, Prov. Riau</address>
   </section>
 
   <footer>
     &copy; <span id="year"></span> Agen Izaura Pandau Jaya - Izaura Air Sehat Indonesia.
+    <div style="font-size:0.8rem; opacity:0.8; margin-top:0.4rem;">Agen resmi produk iZaura dari PT. Izaunet Berkah Mandiri, Bogor - Jawa Barat.</div>
   </footer>
 
   <script>
+    /* ============ DATA ============ */
+    const waterBenefits = [
+      { img: 'tes/1.jpeg', alt: 'Menyeimbangkan pH Tubuh', title: 'Menyeimbangkan pH Tubuh', text: 'Kandungan alkali pada Air Izaura membantu menetralkan asam berlebih, menjaga kenyamanan lambung.' },
+      { img: 'tes/2.jpeg', alt: 'Detoksifikasi Alami', title: 'Detoksifikasi Alami', text: 'Melancarkan sistem metabolisme untuk membantu membuang racun dari dalam tubuh secara efektif.' },
+      { img: 'tes/3.jpeg', alt: 'Kaya Antioksidan', title: 'Kaya Antioksidan', text: 'Membantu menangkal radikal bebas dan merawat sel-sel dari dalam agar tubuh tetap segar.' },
+      { img: 'tes/4.jpeg', alt: 'Hidrasi Lebih Cepat', title: 'Hidrasi Lebih Cepat', text: 'Molekul air halus (micro cluster) membuatnya lebih cepat diserap tubuh untuk memulihkan stamina.' },
+      { img: 'tes/5.jpeg', alt: 'Meningkatkan Daya Tahan', title: 'Meningkatkan Imunitas', text: 'Kandungan oksigen dan mineral yang optimal membantu menjaga daya tahan tubuh agar tidak mudah sakit.' },
+      { img: 'tes/6.jpeg', alt: 'Menjaga Ginjal', title: 'Menjaga Fungsi Ginjal', text: 'Kemurnian air tanpa endapan mineral berbahaya meringankan kerja ginjal untuk pemakaian jangka panjang.' }
+    ];
+
+    const waterPricing = {
+      title: 'Daftar Harga Air Izaura',
+      tiers: [
+        { label: 'Harga Non-Member', items: [
+          { size: 'Ukuran Besar (isi 12)', price: 'Rp 150.000' },
+          { size: 'Ukuran Kecil (isi 16)', price: 'Rp 190.000' }
+        ]},
+        { label: 'Harga Member', badge: 'Hemat Lebih', accent: true, items: [
+          { size: 'Ukuran Besar (isi 12)', price: 'Rp 90.000' },
+          { size: 'Ukuran Kecil (isi 16)', price: 'Rp 100.000' }
+        ]}
+      ],
+      cta: 'Pesan Air Izaura'
+    };
+
+    const products = [
+      {
+        containerId: 'blackGarlicSection',
+        title: 'Black Garlic - Suplemen Herbal Alami',
+        img: 'tes/WhatsApp Image 2026-07-21 at 20.40.53.jpeg',
+        alt: 'Black Garlic',
+        accentColor: 'var(--primary)',
+        photoTag: '100% Fermentasi Alami',
+        desc: 'Bawang putih yang difermentasi secara alami. Proses pemeraman mengubah rasa tajam menjadi lebih lembut dan manis, membuatnya sangat aman di lambung.',
+        benefits: [
+          { title: '1. Menurunkan Kolesterol', text: 'Membantu mengurangi kadar kolesterol jahat (LDL) dan menjaga kesehatan peredaran darah serta organ jantung Anda.' },
+          { title: '2. Tinggi Antioksidan', text: 'Kandungan senyawa S-allylcysteine yang jauh lebih tinggi membantu melindungi sel tubuh dari kerusakan akibat radikal bebas.' },
+          { title: '3. Menstabilkan Gula Darah', text: 'Membantu mengontrol kadar gula dalam darah dan meningkatkan metabolisme alami tubuh dengan konsumsi secara rutin.' }
+        ],
+        priceGradient: 'var(--primary), #3b0764',
+        priceLabel: 'Per Botol',
+        priceValue: 'Rp 95.000',
+        cta: 'Pesan Black Garlic'
+      },
+      {
+        containerId: 'susuSection',
+        title: 'Susu Kambing Etawa',
+        img: 'tes/susu-etawa.jpeg',
+        alt: 'Susu Kambing Etawa',
+        accentColor: 'var(--milk)',
+        photoTag: 'Higienis & Bergizi',
+        desc: 'Susu kambing etawa diolah secara higienis untuk menjaga kandungan gizinya. Teksturnya lebih ringan dan mudah dicerna, cocok dikonsumsi oleh berbagai kalangan usia sebagai asupan nutrisi harian keluarga.',
+        benefits: [
+          { title: '1. Mudah Dicerna', text: 'Struktur molekul lemak yang lebih kecil membuat susu kambing etawa lebih ramah untuk pencernaan.' },
+          { title: '2. Meningkatkan Daya Tahan Tubuh', text: 'Kaya akan vitamin, mineral, dan protein yang membantu menjaga imunitas tubuh agar tetap sehat.' },
+          { title: '3. Menjaga Kesehatan Tulang', text: 'Kandungan kalsium dan fosfor yang tinggi mendukung kepadatan dan kekuatan tulang.' },
+          { title: '4. Membantu Pemulihan Stamina', text: 'Cocok dikonsumsi setelah beraktivitas berat untuk membantu memulihkan energi dan stamina tubuh.' }
+        ],
+        priceGradient: 'var(--milk), #92400e',
+        priceLabel: 'Per Kotak',
+        priceValue: 'Rp 20.000',
+        cta: 'Pesan Susu Etawa'
+      },
+      {
+        containerId: 'pupukSection',
+        title: 'Pupuk Organik Majemuk Hayati',
+        img: 'tes/pupuk.jpeg',
+        alt: 'Pupuk Organik Majemuk Hayati',
+        accentColor: 'var(--green)',
+        photoTag: '100% Organik & Hayati',
+        desc: 'Pupuk organik majemuk hayati diformulasikan dengan bahan alami dan mikroorganisme pembenah tanah, cocok untuk tanaman pangan, hortikultura, maupun perkebunan. Membantu menyuburkan tanah secara berkelanjutan tanpa merusak ekosistem.',
+        benefits: [
+          { title: '1. Menyuburkan & Memperbaiki Struktur Tanah', text: 'Mikroorganisme hayati membantu menggemburkan tanah dan memperbaiki struktur tanah yang padat atau tandus.' },
+          { title: '2. Meningkatkan Hasil Panen', text: 'Menyediakan unsur hara makro dan mikro secara seimbang sehingga tanaman tumbuh lebih optimal dan produktif.' },
+          { title: '3. Ramah Lingkungan', text: 'Bebas bahan kimia berbahaya, aman bagi tanah, mikroba tanah, dan lingkungan sekitar untuk jangka panjang.' },
+          { title: '4. Mempercepat Pertumbuhan Akar', text: 'Kandungan hayati merangsang pertumbuhan akar lebih kuat sehingga tanaman lebih tahan kekeringan dan hama.' },
+          { title: '5. Menghemat Biaya Perawatan', text: 'Mengurangi ketergantungan pada pupuk kimia sehingga biaya perawatan tanaman menjadi lebih efisien.' }
+        ],
+        priceGradient: 'var(--green), #14532d',
+        priceLabel: 'Per Kemasan',
+        priceValue: 'Rp 15.000',
+        cta: 'Pesan Pupuk'
+      }
+    ];
+
+    /* ============ RENDER HELPERS ============ */
+    function renderWaterBenefits() {
+      document.getElementById('waterBenefitsGrid').innerHTML = waterBenefits.map(b => `
+        <div class="benefit-card">
+          <img src="${b.img}" alt="${b.alt}">
+          <h3>${b.title}</h3>
+          <p>${b.text}</p>
+        </div>`).join('');
+    }
+
+    function renderWaterPricing() {
+      const cardsHtml = waterPricing.tiers.map(tier => `
+        <div class="pricing-box${tier.accent ? ' pricing-box--accent' : ''}">
+          <h3>${tier.label}${tier.badge ? ` <span class="save-badge">${tier.badge}</span>` : ''}</h3>
+          <div class="price-list">
+            ${tier.items.map(i => `
+              <div class="price-item"><span>${i.size}</span><strong>${i.price}</strong></div>`).join('')}
+          </div>
+        </div>`).join('');
+      document.getElementById('waterPricingBox').innerHTML = `
+        <h2 style="margin-bottom:1.2rem;">${waterPricing.title}</h2>
+        <div class="pricing-group">${cardsHtml}</div>
+        <a href="#contact" class="cta-button">${waterPricing.cta}</a>`;
+    }
+
+    function renderProduct(p) {
+      const benefitsHtml = p.benefits.map(b => `
+        <div class="bg-benefit-card"><h4>${b.title}</h4><p>${b.text}</p></div>`).join('');
+      document.getElementById(p.containerId).innerHTML = `
+        <h2>${p.title}</h2>
+        <div class="product-photo-card" style="--card-accent: ${p.accentColor};">
+          <img src="${p.img}" alt="${p.alt}">
+          <span class="photo-tag">${p.photoTag}</span>
+        </div>
+        <p>${p.desc}</p>
+        <div class="bg-benefits-grid">${benefitsHtml}</div>
+        <div class="pricing-box" style="margin-bottom:0; background: linear-gradient(135deg, ${p.priceGradient});">
+          <h3>Harga ${p.title}</h3>
+          <div class="price-list">
+            <div class="price-item" style="border:none;"><span>${p.priceLabel}</span><strong style="font-size:2rem;">${p.priceValue}</strong></div>
+          </div>
+          <a href="#contact" class="cta-button">${p.cta}</a>
+        </div>`;
+    }
+
+    renderWaterBenefits();
+    renderWaterPricing();
+    products.forEach(renderProduct);
+
+    /* ============ UI BEHAVIOR ============ */
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    document.querySelectorAll('.cta-button').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.cta-button')) {
         e.preventDefault();
         document.querySelector('#contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
+      }
     });
 
     const navToggle = document.getElementById('navToggle');
     const mainNav = document.getElementById('mainNav');
-    navToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('open');
-    });
+    navToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
 
     document.querySelectorAll('.main-nav a').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         mainNav.classList.remove('open');
-        const targetId = link.getAttribute('href');
-        document.querySelector(targetId).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 
     const fadeObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.15 });
     document.querySelectorAll('.fade-in-section').forEach(el => fadeObserver.observe(el));
   </script>
