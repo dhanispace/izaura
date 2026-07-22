@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Air Izaura & Black Garlic — produk unggulan untuk keluarga Anda">
-  <title>Air Izaura & Black Garlic</title>
+  <meta name="description" content="Agen Izaura Pandau Jaya — Izaura Air Sehat Indonesia">
+  <title>Agen Izaura Pandau Jaya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@400;500;600;700&display=swap">
   
@@ -60,7 +60,7 @@
     }
 
     .brand {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--text-light);
       text-decoration: none;
@@ -74,8 +74,9 @@
     .main-nav a {
       color: var(--text-light);
       text-decoration: none;
-      margin-left: 1.5rem;
+      margin-left: 1.2rem;
       font-weight: 500;
+      font-size: 0.95rem;
       transition: color 0.3s;
     }
 
@@ -148,7 +149,7 @@
     .product-size-card img {
       width: 340px;
       height: 400px;
-      object-fit: cover; /* Mencegah gambar gepeng, memotong bagian lebih */
+      object-fit: cover;
       border-radius: 8px;
     }
 
@@ -216,8 +217,8 @@
     /* KUNCI UKURAN GAMBAR MANFAAT */
     .benefit-card img {
       width: 100%;
-      height: 200px; /* Tinggi gambar dikunci 200px */
-      object-fit: cover; /* Agar tidak gepeng */
+      height: 200px;
+      object-fit: cover;
       border-radius: 12px;
       margin-bottom: 1.2rem;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -279,8 +280,8 @@
       color: var(--accent);
     }
 
-    /* --- BLACK GARLIC SECTION --- */
-    #black-garlic {
+    /* --- GENERIC PRODUCT SECTION (Untuk Black Garlic, Susu, dan Pupuk) --- */
+    .product-section {
       padding: 4rem 5%;
       max-width: 1200px;
       margin: 0 auto 4rem auto;
@@ -290,18 +291,17 @@
       box-shadow: var(--shadow);
     }
 
-    .black-garlic-text h2 {
+    .product-section h2 {
       color: var(--primary);
       margin-bottom: 1rem;
     }
     
-    .black-garlic-text > p {
+    .product-section > p {
       max-width: 800px;
       margin: 0 auto 2rem;
     }
 
-    /* KUNCI UKURAN GAMBAR BLACK GARLIC */
-    .black-garlic-image img {
+    .product-image img {
       width: 250px;
       height: 250px;
       object-fit: cover;
@@ -311,8 +311,7 @@
       border: 5px solid #f3e8ff;
     }
 
-    /* Grid Khusus Manfaat Black Garlic */
-    .bg-benefits-grid {
+    .product-benefits-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
@@ -320,26 +319,26 @@
       text-align: left;
     }
 
-    .bg-benefit-card {
+    .product-benefit-card {
       background: #faf5ff;
       padding: 1.5rem;
       border-radius: 12px;
       border-left: 4px solid var(--accent);
     }
     
-    .bg-benefit-card h4 {
+    .product-benefit-card h4 {
       color: var(--primary);
       margin-bottom: 0.5rem;
       font-size: 1.1rem;
     }
     
-    .bg-benefit-card p {
+    .product-benefit-card p {
       font-size: 0.9rem;
       color: #444;
       margin: 0;
     }
 
-    /* --- KONTAK --- */
+    /* --- KONTAK & LOKASI --- */
     #contact, #location {
       padding: 4rem 5%;
       max-width: 1200px;
@@ -373,7 +372,6 @@
     .contact-btn--whatsapp { background-color: #25D366; }
     .contact-btn--instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
 
-    /* --- LOKASI --- */
     #location iframe {
       width: 100%;
       max-width: 800px;
@@ -428,14 +426,15 @@
 
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
-      <a href="#hero" class="brand">Izaura<span>.</span></a>
+      <a href="#hero" class="brand">Agen Izaura<span>.</span></a>
 
       <nav class="main-nav" id="mainNav">
         <a href="#hero">Beranda</a>
-        <a href="#benefits">Manfaat</a>
+        <a href="#benefits">Air Izaura</a>
         <a href="#black-garlic">Black Garlic</a>
+        <a href="#susu-etawa">Susu Etawa</a>
+        <a href="#pupuk">Pupuk Organik</a>
         <a href="#contact">Kontak</a>
-        <a href="#location">Lokasi</a>
       </nav>
 
       <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi">
@@ -448,7 +447,7 @@
 
   <section id="hero" class="fade-in-section">
     <div class="hero-text">
-      <h1>Kesegaran Alami untuk Keluarga Anda</h1>
+      <h1>Izaura Air Sehat Indonesia</h1>
       <p>
         Air Izaura hadir sebagai pilihan air minum kemasan yang diproses melalui
         tahapan penyaringan berlapis untuk memastikan setiap tetesnya benar-benar
@@ -461,7 +460,6 @@
         <li>✓ pH Seimbang</li>
       </ul>
 
-      <!-- HANYA 1 GAMBAR DI SINI -->
       <div class="hero-images">
         <div class="product-size-card">
           <img src="tes/WhatsApp Image 2026-07-21 at 20.38.13.jpeg" alt="Air Izaura">
@@ -532,45 +530,100 @@
   </section>
 
   <!-- BAGIAN BLACK GARLIC -->
-  <section id="black-garlic" class="fade-in-section">
-    <div class="black-garlic-text">
+  <section id="black-garlic" class="product-section fade-in-section">
+    <div class="product-text">
       <h2>Black Garlic - Suplemen Herbal Alami</h2>
       
-      <div class="black-garlic-image">
-        <img src="tes/WhatsApp Image 2026-07-21 at 20.40.53.jpeg">
+      <div class="product-image">
+        <img src="tes/WhatsApp Image 2026-07-21 at 20.40.53.jpeg" alt="Black Garlic">
       </div>
 
       <p>
         Bawang putih yang difermentasi secara alami. Proses pemeraman mengubah rasa tajam menjadi lebih lembut dan manis, membuatnya sangat aman di lambung.
       </p>
 
-      <div class="bg-benefits-grid">
-        <div class="bg-benefit-card">
+      <div class="product-benefits-grid">
+        <div class="product-benefit-card">
           <h4>1. Menurunkan Kolesterol</h4>
           <p>Membantu mengurangi kadar kolesterol jahat (LDL) dan menjaga kesehatan peredaran darah serta organ jantung Anda.</p>
         </div>
-        <div class="bg-benefit-card">
+        <div class="product-benefit-card">
           <h4>2. Tinggi Antioksidan</h4>
           <p>Kandungan senyawa S-allylcysteine yang jauh lebih tinggi membantu melindungi sel tubuh dari kerusakan akibat radikal bebas.</p>
         </div>
-        <div class="bg-benefit-card">
+        <div class="product-benefit-card">
           <h4>3. Menstabilkan Gula Darah</h4>
           <p>Membantu mengontrol kadar gula dalam darah dan meningkatkan metabolisme alami tubuh dengan konsumsi secara rutin.</p>
         </div>
       </div>
 
-      <!-- Harga Black Garlic -->
-      <div class="pricing-box" style="margin-bottom: 0; background: linear-gradient(135deg, var(--primary), #3b0764);">
-        <h3>Harga Spesial Black Garlic</h3>
-        <div class="price-list">
-          <div class="price-item" style="border: none;">
-            <span>Per Botol</span>
-            <strong style="font-size: 2rem;">Rp 95.000</strong>
-          </div>
-        </div>
-        <a href="#contact" class="cta-button">Pesan Black Garlic</a>
+      <a href="#contact" class="cta-button">Pesan Black Garlic</a>
+    </div>
+  </section>
+
+  <!-- BAGIAN SUSU KAMBING ETAWA -->
+  <section id="susu-etawa" class="product-section fade-in-section" style="background-color: var(--bg-light); box-shadow: none;">
+    <div class="product-text">
+      <h2>Susu Kambing Etawa</h2>
+      
+      <div class="product-image">
+        <!-- Silakan ubah lokasi gambar dengan gambar susu kambing Anda -->
+        <img src="tes/susu-kambing-etawa.jpeg" alt="Susu Kambing Etawa" onerror="this.src='https://via.placeholder.com/250?text=Foto+Susu+Etawa'">
       </div>
 
+      <p>
+        Pilihan nutrisi harian yang kaya manfaat. Susu kambing etawa dikenal lebih mudah dicerna dan tidak memicu alergi jika dibandingkan dengan susu sapi.
+      </p>
+
+      <div class="product-benefits-grid">
+        <div class="product-benefit-card" style="background: #fff;">
+          <h4>1. Menyehatkan Pernapasan</h4>
+          <p>Sangat baik dikonsumsi untuk membantu terapi penyembuhan masalah pernapasan seperti asma, TBC, hingga bronkitis.</p>
+        </div>
+        <div class="product-benefit-card" style="background: #fff;">
+          <h4>2. Kepadatan Tulang & Sendi</h4>
+          <p>Kaya akan kalsium dan fosfor yang penting untuk mencegah pengeroposan tulang dan meredakan nyeri sendi.</p>
+        </div>
+        <div class="product-benefit-card" style="background: #fff;">
+          <h4>3. Aman Bagi Pencernaan</h4>
+          <p>Memiliki butiran lemak yang lebih halus sehingga sangat mudah dicerna oleh lambung tanpa menimbulkan rasa begah.</p>
+        </div>
+      </div>
+
+      <a href="#contact" class="cta-button">Pesan Susu Etawa</a>
+    </div>
+  </section>
+
+  <!-- BAGIAN PUPUK ORGANIK -->
+  <section id="pupuk" class="product-section fade-in-section">
+    <div class="product-text">
+      <h2>Pupuk Organik Majemuk Hayati</h2>
+      
+      <div class="product-image">
+        <!-- Silakan ubah lokasi gambar dengan gambar pupuk Anda -->
+        <img src="tes/pupuk-organik.jpeg" alt="Pupuk Organik Majemuk Hayati" onerror="this.src='https://via.placeholder.com/250?text=Foto+Pupuk'">
+      </div>
+
+      <p>
+        Inovasi pertanian untuk hasil bumi yang lebih berkualitas. Mengandung mikroorganisme baik yang siap mengembalikan kesuburan tanah Anda.
+      </p>
+
+      <div class="product-benefits-grid">
+        <div class="product-benefit-card">
+          <h4>1. Memperbaiki Kualitas Tanah</h4>
+          <p>Membantu menggemburkan dan mengembalikan unsur hara alami tanah yang rusak akibat penggunaan kimia berlebihan.</p>
+        </div>
+        <div class="product-benefit-card">
+          <h4>2. Memacu Pertumbuhan</h4>
+          <p>Menyediakan nutrisi esensial bagi tanaman yang diserap lebih cepat, merangsang akar, batang, daun, dan buah.</p>
+        </div>
+        <div class="product-benefit-card">
+          <h4>3. Ramah Lingkungan</h4>
+          <p>Berbahan dasar organik 100% sehingga aman bagi lingkungan, hasil panen pun menjadi lebih sehat dan bebas residu kimia.</p>
+        </div>
+      </div>
+
+      <a href="#contact" class="cta-button">Pesan Pupuk Organik</a>
     </div>
   </section>
 
@@ -600,7 +653,7 @@
       style="border:0;"
       allowfullscreen=""
       referrerpolicy="strict-origin-when-cross-origin"
-      title="Lokasi Toko Air Izaura">
+      title="Lokasi Toko Agen Izaura">
     </iframe>
     <address style="margin-top: 15px; font-weight: 500; color: var(--text-dark);">
       Jl. Rengas I, Blok C41, No. 27, Desa Pandau Jaya, Kec. Siak Hulu, Kab. Kampar, Prov. Riau
@@ -608,7 +661,7 @@
   </section>
 
   <footer>
-    &copy; <span id="year"></span> Air Izaura & Black Garlic - Kesegaran & Kesehatan Alami.
+    &copy; <span id="year"></span> Agen Izaura Pandau Jaya - Izaura Air Sehat Indonesia.
   </footer>
 
   <script>
