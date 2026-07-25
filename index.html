@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agen Izaura Pandau Jaya — Izaura air pH tinggi, Black Garlic, Susu Kambing Etawa & Pupuk Organik untuk keluarga Anda">
+  <title>Agen Izaura Pandau Jaya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@400;500;600;700&display=swap">
+
+  <style>
+    :root {
+      --primary: #4c1d95; --secondary: #7c3aed; --accent: #f59e0b;
+      --bg-light: #faf5ff; --text-dark: #2e1065; --text-light: #ffffff;
+      --green: #16a34a; --milk: #d97706;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; color: #333; background: var(--bg-light); line-height: 1.6; overflow-x: hidden; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--text-dark); }
+
+    /* Heading Wave Underline */
+    #benefits h2, #black-garlic h2, #susu h2, #pupuk h2, #contact h2, #location h2 { position: relative; display: inline-block; padding-bottom: 14px; }
+    #benefits h2::after, #black-garlic h2::after, #susu h2::after, #pupuk h2::after, #contact h2::after, #location h2::after {
+      content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 90px; height: 4px; border-radius: 4px;
+      background: linear-gradient(90deg, var(--secondary), var(--accent), var(--secondary)); background-size: 200% 100%;
+      animation: underlineFlow 3.5s linear infinite;
+    }
+    @keyframes underlineFlow { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+    /* Wave Divider */
+    .wave-divider { display: block; width: 100%; height: 60px; margin-top: -1px; }
+    .wave-divider svg { width: 100%; height: 100%; display: block; }
+    .wave-divider path { animation: waveShift 8s ease-in-out infinite; }
+    @keyframes waveShift {
+      0%, 100% { d: path('M0,32 C 300,64 900,0 1200,32 L1200,60 L0,60 Z'); }
+      50% { d: path('M0,20 C 300,0 900,64 1200,20 L1200,60 L0,60 Z'); }
+    }
+
+    /* Header */
+    .site-header {
+      position: fixed; top: 0; width: 100%; background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background-size: 200% 200%; animation: headerGradient 10s ease infinite; color: var(--text-light); box-shadow: var(--shadow); z-index: 1000;
+    }
+    @keyframes headerGradient { 0%,100%{background-position:0% 50%;} 50%{background-position:100% 50%;} }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; max-width: 1200px; margin: 0 auto; }
+    .brand { font-size: 1.4rem; font-weight: 700; color: var(--text-light); text-decoration: none; font-family: 'Playfair Display', serif; line-height: 1.2; display: inline-flex; align-items: center; gap: 8px; }
+    .brand::before { content:'💧'; display: inline-block; animation: dropBounce 2.2s ease-in-out infinite; filter: drop-shadow(0 0 4px rgba(245,158,11,0.5)); }
+    @keyframes dropBounce { 0%,100%{ transform: translateY(0) rotate(0deg);} 50%{ transform: translateY(-4px) rotate(8deg);} }
+    .brand span { color: var(--accent); }
+    .main-nav { display: flex; align-items: center; }
+    .main-nav a { position: relative; color: var(--text-light); text-decoration: none; margin-left: 1.3rem; font-weight: 500; transition: color 0.3s; white-space: nowrap; }
+    .main-nav a::after { content:''; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }
+    .main-nav a:hover { color: var(--accent); }
+    .main-nav a:hover::after { width: 100%; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .nav-toggle span { width: 25px; height: 3px; background-color: var(--text-light); transition: 0.3s; }
+
+    /* Hero Section */
+    #hero {
+      padding: 8rem 5% 2rem; text-align: center; position: relative; overflow: hidden;
+      background: linear-gradient(-45deg, #ede9fe, #f3e8ff, #ede9fe, var(--bg-light)); background-size: 400% 400%; animation: heroGradient 14s ease infinite;
+    }
+    @keyframes heroGradient { 0%,100%{background-position:0% 50%;} 50%{background-position:100% 50%;} }
+    .bubble { position: absolute; bottom: -60px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.85), rgba(124,58,237,0.15)); pointer-events: none; animation: bubbleRise linear infinite; }
+    @keyframes bubbleRise { 0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; } 10% { opacity: 0.7; } 100% { transform: translateY(-620px) translateX(20px) scale(1.1); opacity: 0; } }
+    .bubble:nth-child(1){ left:8%; width:22px; height:22px; animation-duration:9s; animation-delay:0s; }
+    .bubble:nth-child(2){ left:22%; width:14px; height:14px; animation-duration:7s; animation-delay:1.2s; }
+    .bubble:nth-child(3){ left:38%; width:28px; height:28px; animation-duration:11s; animation-delay:0.5s; }
+    .bubble:nth-child(4){ left:58%; width:16px; height:16px; animation-duration:8s; animation-delay:2s; }
+    .bubble:nth-child(5){ left:74%; width:24px; height:24px; animation-duration:10s; animation-delay:0.8s; }
+    .bubble:nth-child(6){ left:88%; width:12px; height:12px; animation-duration:6.5s; animation-delay:1.6s; }
+
+    .hero-text { position: relative; z-index: 2; }
+    .hero-text .slogan {
+      display: inline-block; background-color: var(--primary); color: var(--text-light); font-weight: 600; letter-spacing: 0.5px;
+      padding: 0.4rem 1.2rem; border-radius: 30px; margin-bottom: 1rem; font-size: 0.95rem;
+      animation: fadeSlideDown 0.9s cubic-bezier(0.16,1,0.3,1) both, slogGlow 3s ease-in-out infinite 0.9s;
+    }
+    @keyframes fadeSlideDown { 0%{ opacity:0; transform: translateY(-16px);} 100%{ opacity:1; transform:translateY(0);} }
+    @keyframes slogGlow { 0%,100%{ box-shadow: 0 0 0 0 rgba(124,58,237,0.35);} 50%{ box-shadow: 0 0 14px 3px rgba(124,58,237,0.35);} }
+    .hero-text h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary); animation: fadeSlideUp 1s cubic-bezier(0.16,1,0.3,1) both 0.15s; }
+    @keyframes fadeSlideUp { 0%{ opacity:0; transform: translateY(24px);} 100%{ opacity:1; transform:translateY(0);} }
+    .hero-text p { max-width: 800px; margin: 0 auto 1.5rem; font-size: 1.05rem; animation: fadeSlideUp 1s cubic-bezier(0.16,1,0.3,1) both 0.3s; }
+    .trust-badges { list-style: none; display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .trust-badges li { animation: fadeSlideUp 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+    .trust-badges li:nth-child(1){ animation-delay: 0.45s; }
+    .trust-badges li:nth-child(2){ animation-delay: 0.6s; }
+    .trust-badges li:nth-child(3){ animation-delay: 0.75s; }
+
+    /* Gambar Pertama Diperbesar Luasnya */
+    .size-showcase { position: relative; z-index: 2; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 0 auto 1.5rem; }
+    .product-size-card {
+      position: relative; background: #fff; padding: 1.2rem; border-radius: 20px;
+      box-shadow: var(--shadow); border: 1px solid #e9d5ff; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 320px; width: 100%; margin: 0 auto;
+    }
+    .product-size-card::before {
+      content:''; position: absolute; top: 0; left: -160%; width: 55%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(124,58,237,0.15), transparent); transform: skewX(-20deg); animation: cardShimmer 4.5s ease-in-out infinite;
+    }
+    @keyframes cardShimmer { 0%{ left:-160%;} 60%,100%{ left:160%;} }
+    .product-size-card:hover { transform: translateY(-8px); box-shadow: 0 16px 28px -8px rgba(76,29,149,0.28); }
+    .product-size-card img { width: 100%; height: 380px; object-fit: cover; border-radius: 14px; display: block; position: relative; z-index: 1; }
+
+    /* CTA Button */
+    .cta-button {
+      position: relative; overflow: hidden; display: inline-block; padding: 0.8rem 2rem; background-color: var(--accent); color: #fff;
+      text-decoration: none; font-weight: 600; border-radius: 50px; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+      transition: transform 0.3s, background-color 0.3s; margin-top: 1rem; animation: ctaPulse 2.6s ease-in-out infinite;
+    }
+    @keyframes ctaPulse { 0%,100%{ box-shadow: 0 4px 15px rgba(245,158,11,0.4);} 50%{ box-shadow: 0 4px 24px rgba(245,158,11,0.7);} }
+    .cta-button::before {
+      content:''; position: absolute; top: 0; left: -120%; width: 40%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent); transform: skewX(-20deg); animation: ctaShine 3s ease-in-out infinite;
+    }
+    @keyframes ctaShine { 0%{ left:-120%;} 60%,100%{ left:140%;} }
+    .cta-button:hover { background-color: #d97706; transform: translateY(-3px); }
+
+    /* Benefits Section */
+    #benefits { padding: 2rem 5% 4rem; max-width: 1200px; margin: 0 auto; text-align: center; position: relative; }
+    #benefits h2 { font-size: 2.2rem; margin: 0.5rem 0 1.5rem; color: var(--primary); }
+    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2.5rem; }
+    .benefit-card { position: relative; background: #fff; padding: 1.5rem; border-radius: 16px; box-shadow: var(--shadow); transition: transform 0.35s ease, box-shadow 0.35s ease; border-bottom: 4px solid var(--secondary); overflow: hidden; }
+    .benefit-card::after { content:''; position: absolute; top: -40%; right: -40%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(124,58,237,0.12), transparent 70%); border-radius: 50%; animation: floatGlow 5s ease-in-out infinite; }
+    @keyframes floatGlow { 0%,100%{ transform: translate(0,0);} 50%{ transform: translate(-10px,10px);} }
+    .benefit-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 18px 30px -10px rgba(76,29,149,0.25); }
+    
+    /* 6 Gambar Kebaikan Utama Rasio 5 : 4.5 */
+    .benefit-card img { width: 100%; aspect-ratio: 5 / 4.5; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.5s ease; }
+    .benefit-card:hover img { transform: scale(1.05); }
+    .benefit-card h3 { font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--secondary); }
+    .benefit-card p { font-size: 0.95rem; color: #555; }
+
+    /* Pricing Section */
+    .pricing-box { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 2rem; border-radius: 16px; box-shadow: var(--shadow); max-width: 700px; margin: 0 auto 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .pricing-box::before { content:''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 18px 18px; animation: dotsDrift 12s linear infinite; }
+    @keyframes dotsDrift { 0%{ background-position:0 0;} 100%{ background-position: 180px 180px;} }
+    .pricing-box:hover { box-shadow: 0 18px 32px -8px rgba(76,29,149,0.4); }
+    .pricing-box h3 { color: white; margin-bottom: 1.5rem; font-size: 1.4rem; position: relative; }
+    .pricing-group { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 0.5rem; }
+    .pricing-group .pricing-box { flex: 1 1 280px; max-width: 320px; margin: 0; }
+    .pricing-group .pricing-box:hover { transform: translateY(-6px); }
+    .pricing-box--accent { background: linear-gradient(135deg, var(--accent), #b45309); }
+    .save-badge { display: inline-block; background: rgba(255,255,255,0.28); font-size: 0.65rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-left: 8px; vertical-align: middle; text-transform: uppercase; letter-spacing: 0.5px; animation: badgeBlink 1.8s ease-in-out infinite; }
+    @keyframes badgeBlink { 0%,100%{ opacity:1;} 50%{ opacity:0.55;} }
+    .price-list { display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; position: relative; }
+    .price-item { background: rgba(255, 255, 255, 0.12); border: 2px solid rgba(255, 255, 255, 0.3); padding: 1rem 1.5rem; border-radius: 12px; text-align: center; transition: transform 0.25s ease, background 0.25s ease; }
+    .price-item:hover { transform: translateY(-4px); background: rgba(255,255,255,0.2); }
+    .price-item span { display: block; font-size: 0.9rem; margin-bottom: 0.5rem; opacity: 0.9; }
+    .price-item strong { display: block; font-size: 1.5rem; color: var(--accent); }
+    .pricing-box--accent .price-item strong { color: #ffffff; }
+
+    /* Other Products Section */
+    #black-garlic, #susu, #pupuk { padding: 4rem 5%; max-width: 1200px; margin: 0 auto 4rem; text-align: center; background: #fff; border-radius: 20px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+    #black-garlic::before, #susu::before, #pupuk::before {
+      content:''; position: absolute; top: -60px; right: -60px; width: 180px; height: 180px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,58,237,0.08), transparent 70%); animation: floatGlow 6s ease-in-out infinite;
+    }
+    #susu::before { background: radial-gradient(circle, rgba(217,119,6,0.1), transparent 70%); }
+    #pupuk::before { background: radial-gradient(circle, rgba(22,163,74,0.1), transparent 70%); }
+    .product-text h2 { color: var(--primary); margin-bottom: 1rem; }
+    .product-text > p { max-width: 800px; margin: 0 auto 2rem; position: relative; z-index: 1; }
+    .product-photo-card {
+      position: relative; display: inline-block; background: #fff; padding: 1rem 1rem 1.6rem; border-radius: 18px;
+      box-shadow: var(--shadow); margin-bottom: 2.4rem; border-top: 6px solid var(--card-accent, var(--primary));
+      transition: transform 0.3s ease, box-shadow 0.3s ease; z-index: 1;
+    }
+    .product-photo-card:hover { transform: translateY(-6px) rotate(-0.5deg); box-shadow: 0 16px 28px -8px rgba(0,0,0,0.2); }
+    .product-photo-card img { width: 280px; height: 280px; object-fit: cover; border-radius: 12px; display: block; }
+    .product-photo-card .photo-tag {
+      position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--card-accent, var(--primary)); color: #fff; font-size: 0.75rem; font-weight: 600;
+      padding: 5px 16px; border-radius: 20px; white-space: nowrap; box-shadow: 0 3px 8px rgba(0,0,0,0.2); animation: tagPop 2.4s ease-in-out infinite;
+    }
+    @keyframes tagPop { 0%,100%{ transform: translateX(-50%) scale(1);} 50%{ transform: translateX(-50%) scale(1.06);} }
+    .bg-benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; text-align: left; position: relative; z-index: 1; }
+    .bg-benefit-card { background: #faf5ff; padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--accent); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .bg-benefit-card:hover { transform: translateX(6px); box-shadow: 0 8px 18px -6px rgba(0,0,0,0.12); }
+    .bg-benefit-card h4 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.1rem; }
+    .bg-benefit-card p { font-size: 0.9rem; color: #444; margin: 0; }
+    #susu .bg-benefit-card { border-left-color: var(--milk); }
+    #pupuk .bg-benefit-card { border-left-color: var(--green); }
+
+    /* Contact & Location */
+    #contact, #location { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; text-align: center; }
+    .contact-panel { background: linear-gradient(135deg, var(--secondary), var(--primary)); border-radius: 20px; padding: 3rem 1.5rem; position: relative; overflow: hidden; }
+    .contact-panel::before { content:''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 18px 18px; animation: dotsDrift 12s linear infinite; }
+    .contact-panel h2 { color: #fff; position: relative; }
+    #contact .contact-panel h2::after { background: linear-gradient(90deg, #fff, var(--accent), #fff); }
+    .contact-buttons { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; position: relative; }
+    .contact-btn {
+      position: relative; overflow: hidden; display: flex; align-items: center; gap: 10px; padding: 0.8rem 1.7rem; border-radius: 30px; text-decoration: none; color: #fff; font-weight: 600; transition: transform 0.3s, background 0.3s;
+      background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.45); animation: btnBreathe 3s ease-in-out infinite;
+    }
+    .contact-btn svg { fill: #fff; opacity: 0.95; }
+    @keyframes btnBreathe { 0%,100%{ box-shadow: 0 0 0 0 rgba(255,255,255,0.18);} 50%{ box-shadow: 0 0 0 8px rgba(255,255,255,0);} }
+    .contact-btn:hover { transform: translateY(-3px); background: rgba(255,255,255,0.25); animation: none; }
+    #location iframe { width: 100%; max-width: 800px; border-radius: 16px; box-shadow: var(--shadow); margin-bottom: 1rem; }
+    .address-box { display: inline-flex; align-items: center; gap: 10px; margin-top: 1rem; background: #fff; padding: 0.9rem 1.6rem; border-radius: 50px; box-shadow: var(--shadow); border: 1px solid #e9d5ff; }
+    .address-box .pin { font-size: 1.1rem; }
+    .address-box address { font-style: normal; font-weight: 500; color: var(--text-dark); font-size: 0.95rem; }
+
+    footer { position: relative; background: var(--primary); color: #fff; text-align: center; padding: 2rem; margin-top: 3rem; }
+    .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; will-change: opacity, visibility; }
+    .fade-in-section.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .main-nav { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--primary); flex-direction: column; padding: 1rem 0; box-shadow: var(--shadow); }
+      .main-nav.open { display: flex; }
+      .main-nav a { margin: 0.5rem 2rem; }
+      .size-showcase { flex-direction: column; align-items: center; }
+      .trust-badges, .price-list { flex-direction: column; gap: 0.5rem; }
+      .price-list { gap: 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#hero" class="brand">Agen Izaura<span> Pandau Jaya</span></a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#hero">Beranda</a>
+        <a href="#benefits">Air Izaura</a>
+        <a href="#black-garlic">Black Garlic</a>
+        <a href="#susu">Susu Etawa</a>
+        <a href="#pupuk">Pupuk</a>
+        <a href="#contact">Kontak</a>
+        <a href="#location">Lokasi</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section id="hero" class="fade-in-section">
+    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+    <span class="bubble"></span><span class="bubble"></span><span class="bubble"></span>
+    <div class="hero-text">
+      <span class="slogan">Izaura Air Sehat Indonesia</span>
+      <h1>Kesegaran Alami untuk Keluarga Anda</h1>
+      <p>Izaura adalah air minum ber-pH tinggi yang dipproses melalui tahapan penyaringan berlapis, didesain sesuai kebutuhan tubuh sehingga setiap tetesnya benar-benar murni, jernih, dan bebas dari kontaminan.</p>
+      <ul class="trust-badges"><li>✓ 100% Higienis</li><li>✓ Teruji Berkualitas</li><li>✓ pH Tinggi</li></ul>
+    </div>
+  </section>
+
+  <div class="wave-divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,32 C 300,64 900,0 1200,32 L1200,60 L0,60 Z" fill="#ede9fe"></path></svg></div>
+
+  <section id="benefits" class="fade-in-section">
+    <div class="size-showcase">
+      <div class="product-size-card">
+        <img src="tes/q.jpeg">
+      </div>
+    </div>
+    <h2>6 Kebaikan Utama Air Izaura</h2>
+    <div class="benefits-grid" id="waterBenefitsGrid"></div>
+    <div id="waterPricingBox"></div>
+  </section>
+
+  <div class="wave-divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,28 C 300,60 900,4 1200,28 L1200,60 L0,60 Z" fill="#faf5ff"></path></svg></div>
+
+  <section id="black-garlic" class="fade-in-section"><div class="product-text" id="blackGarlicSection"></div></section>
+  <section id="susu" class="fade-in-section"><div class="product-text" id="susuSection"></div></section>
+  <section id="pupuk" class="fade-in-section"><div class="product-text" id="pupukSection"></div></section>
+
+  <div class="wave-divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,32 C 300,0 900,64 1200,32 L1200,60 L0,60 Z" fill="#ede9fe"></path></svg></div>
+
+  <section id="contact" class="fade-in-section">
+    <div class="contact-panel">
+      <h2>Hubungi Kami</h2>
+      <div class="contact-buttons">
+        <a href="https://wa.me/6285278393474" target="_blank" rel="noopener noreferrer" class="contact-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+        <a href="https://instagram.com/surnitaa_" target="_blank" rel="noopener noreferrer" class="contact-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <span>Instagram</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="location" class="fade-in-section">
+    <h2>Lokasi Kami</h2>
+    <iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11284.605501190139!2d101.46087186522468!3d0.42115210366865297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a5bdfee2a56f%3A0x2da648857a30c8da!2sCFF7%2B22P%2C%20Jl.%20Rengas%201%2C%20Pandau%20Jaya%2C%20Kec.%20Siak%20Hulu%2C%20Kabupaten%20Kampar%2C%20Riau%2028284!5e0!3m2!1sen!2sid!4v1784624006926!5m2!1sen!2sid" height="400" style="border:0;" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin" title="Lokasi Toko Air Izaura"></iframe>
+    <div class="address-box">
+      <span class="pin">📍</span>
+      <address>Jl. Rengas I, Blok C41, No. 27, Desa Pandau Jaya, Kec. Siak Hulu, Kab. Kampar, Prov. Riau</address>
+    </div>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> Agen Izaura Pandau Jaya - Izaura Air Sehat Indonesia.
+    <div style="font-size:0.8rem; opacity:0.8; margin-top:0.4rem;">Agen resmi produk iZaura dari PT. Izaunet Berkah Mandiri, Bogor - Jawa Barat.</div>
+  </footer>
+
+  <script>
+    const waterBenefits = [
+      { img: 'tes/1.jpeg', alt: 'Menyeimbangkan pH Tubuh', title: 'Menyeimbangkan pH Tubuh', text: 'Kandungan alkali pada Air Izaura membantu menetralkan asam berlebih, menjaga kenyamanan lambung.' },
+      { img: 'tes/2.jpeg', alt: 'Detoksifikasi Alami', title: 'Detoksifikasi Alami', text: 'Melancarkan sistem metabolisme untuk membantu membuang racun dari dalam tubuh secara efektif.' },
+      { img: 'tes/3.jpeg', alt: 'Kaya Antioksidan', title: 'Kaya Antioksidan', text: 'Membantu menangkal radikal bebas dan merawat sel-sel dari dalam agar tubuh tetap segar.' },
+      { img: 'tes/4.jpeg', alt: 'Hidrasi Lebih Cepat', title: 'Hidrasi Lebih Cepat', text: 'Molekul air halus (micro cluster) membuatnya lebih cepat diserap tubuh untuk memulihkan stamina.' },
+      { img: 'tes/5.jpeg', alt: 'Meningkatkan Daya Tahan', title: 'Meningkatkan Imunitas', text: 'Kandungan oksigen dan mineral yang optimal membantu menjaga daya tahan tubuh agar tidak mudah sakit.' },
+      { img: 'tes/6.jpeg', alt: 'Menjaga Ginjal', title: 'Menjaga Fungsi Ginjal', text: 'Kemurnian air tanpa endapan mineral berbahaya meringankan kerja ginjal untuk pemakaian jangka panjang.' }
+    ];
+
+    const waterPricing = {
+      title: 'Daftar Harga Air Izaura',
+      tiers: [
+        { label: 'Harga Non-Member', items: [{ size: 'Ukuran Besar (isi 12)', price: 'Rp 150.000' }, { size: 'Ukuran Kecil (isi 16)', price: 'Rp 190.000' }] },
+        { label: 'Harga Member', badge: 'Hemat Lebih', accent: true, items: [{ size: 'Ukuran Besar (isi 12)', price: 'Rp 90.000' }, { size: 'Ukuran Kecil (isi 16)', price: 'Rp 100.000' }] }
+      ],
+      cta: 'Pesan Air Izaura'
+    };
+
+    const products = [
+      {
+        containerId: 'blackGarlicSection', title: 'Black Garlic - Suplemen Herbal Alami', img: 'tes/WhatsApp Image 2026-07-21 at 20.40.53.jpeg', alt: 'Black Garlic', accentColor: 'var(--primary)', photoTag: '100% Fermentasi Alami',
+        desc: 'Bawang putih yang difermentasi secara alami. Proses pemeraman mengubah rasa tajam menjadi lebih lembut dan manis, membuatnya sangat aman di lambung.',
+        benefits: [
+          { title: '1. Menurunkan Kolesterol', text: 'Membantu mengurangi kadar kolesterol jahat (LDL) dan menjaga kesehatan peredaran darah serta organ jantung Anda.' },
+          { title: '2. Tinggi Antioksidan', text: 'Kandungan senyawa S-allylcysteine yang jauh lebih tinggi membantu melindungi sel tubuh dari kerusakan akibat radikal bebas.' },
+          { title: '3. Menstabilkan Gula Darah', text: 'Membantu mengontrol kadar gula dalam darah dan meningkatkan metabolisme alami tubuh dengan konsumsi secara rutin.' }
+        ],
+        priceGradient: 'var(--primary), #3b0764', priceLabel: 'Per Botol', priceValue: 'Rp 95.000', cta: 'Pesan Black Garlic'
+      },
+      {
+        containerId: 'susuSection', title: 'Susu Kambing Etawa', img: 'tes/si.jpeg', alt: 'Susu Kambing Etawa', accentColor: 'var(--milk)', photoTag: 'Higienis & Bergizi',
+        desc: 'Susu kambing etawa diolah secara higienis untuk menjaga kandungan gizinya. Teksturnya lebih ringan dan mudah dicerna, cocok dikonsumsi oleh berbagai kalangan usia sebagai asupan nutrisi harian keluarga.',
+        benefits: [
+          { title: '1. Mudah Dicerna', text: 'Struktur molekul lemak yang lebih kecil membuat susu kambing etawa lebih ramah untuk pencernaan.' },
+          { title: '2. Meningkatkan Daya Tahan Tubuh', text: 'Kaya akan vitamin, mineral, dan protein yang membantu menjaga imunitas tubuh agar tetap sehat.' },
+          { title: '3. Menjaga Kesehatan Tulang', text: 'Kandungan kalsium dan fosfor yang tinggi mendukung kepadatan dan kekuatan tulang.' },
+          { title: '4. Membantu Pemulihan Stamina', text: 'Cocok dikonsumsi setelah beraktivitas berat untuk membantu memulihkan energi dan stamina tubuh.' }
+        ],
+        priceGradient: 'var(--milk), #92400e', priceLabel: 'Per Kotak', priceValue: 'Rp 20.000', cta: 'Pesan Susu Etawa'
+      },
+      {
+        containerId: 'pupukSection', title: 'Pupuk Organik Majemuk Hayati', img: 'tes/pi.jpeg', alt: 'Pupuk Organik Majemuk Hayati', accentColor: 'var(--green)', photoTag: '100% Organik & Hayati',
+        desc: 'Pupuk organik majemuk hayati diformulasikan dengan bahan alami dan mikroorganisme pembenah tanah, cocok untuk tanaman pangan, hortikultura, maupun perkebunan. Membantu menyuburkan tanah secara berkelanjutan tanpa merusak ekosistem.',
+        benefits: [
+          { title: '1. Menyuburkan & Memperbaiki Struktur Tanah', text: 'Mikroorganisme hayati membantu menggemburkan tanah dan memperbaiki struktur tanah yang padat atau tandus.' },
+          { title: '2. Meningkatkan Hasil Panen', text: 'Menyediakan unsur hara makro dan mikro secara seimbang sehingga tanaman tumbuh lebih optimal dan produktif.' },
+          { title: '3. Ramah Lingkungan', text: 'Bebas bahan kimia berbahaya, aman bagi tanah, mikroba tanah, dan lingkungan sekitar untuk jangka panjang.' },
+          { title: '4. Mempercepat Pertumbuhan Akar', text: 'Kandungan hayati merangsang pertumbuhan akar lebih kuat sehingga tanaman lebih tahan kekeringan dan hama.' },
+          { title: '5. Menghemat Biaya Perawatan', text: 'Mengurangi ketergantungan pada pupuk kimia sehingga biaya perawatan tanaman menjadi lebih efisien.' }
+        ],
+        priceGradient: 'var(--green), #14532d', priceLabel: 'Per Kemasan', priceValue: 'Rp 15.000', cta: 'Pesan Pupuk'
+      }
+    ];
+
+    document.getElementById('waterBenefitsGrid').innerHTML = waterBenefits.map(b => `<div class="benefit-card"><img src="${b.img}" alt="${b.alt}"><h3>${b.title}</h3><p>${b.text}</p></div>`).join('');
+
+    document.getElementById('waterPricingBox').innerHTML = `<h2 style="margin-bottom:1.2rem;">${waterPricing.title}</h2><div class="pricing-group">${waterPricing.tiers.map(tier => `<div class="pricing-box${tier.accent ? ' pricing-box--accent' : ''}"><h3>${tier.label}${tier.badge ? ` <span class="save-badge">${tier.badge}</span>` : ''}</h3><div class="price-list">${tier.items.map(i => `<div class="price-item"><span>${i.size}</span><strong>${i.price}</strong></div>`).join('')}</div></div>`).join('')}</div><a href="#contact" class="cta-button">${waterPricing.cta}</a>`;
+
+    products.forEach(p => {
+      document.getElementById(p.containerId).innerHTML = `<h2>${p.title}</h2><div class="product-photo-card" style="--card-accent: ${p.accentColor};"><img src="${p.img}" alt="${p.alt}"><span class="photo-tag">${p.photoTag}</span></div><p>${p.desc}</p><div class="bg-benefits-grid">${p.benefits.map(b => `<div class="bg-benefit-card"><h4>${b.title}</h4><p>${b.text}</p></div>`).join('')}</div><div class="pricing-box" style="margin-bottom:0; background: linear-gradient(135deg, ${p.priceGradient});"><h3>Harga ${p.title}</h3><div class="price-list"><div class="price-item" style="border:none;"><span>${p.priceLabel}</span><strong style="font-size:2rem;">${p.priceValue}</strong></div></div><a href="#contact" class="cta-button">${p.cta}</a></div>`;
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.addEventListener('click', e => {
+      if (e.target.closest('.cta-button')) {
+        e.preventDefault();
+        document.querySelector('#contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    const mainNav = document.getElementById('mainNav');
+    document.getElementById('navToggle').addEventListener('click', () => mainNav.classList.toggle('open'));
+
+    document.querySelectorAll('.main-nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        mainNav.classList.remove('open');
+        document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    const fadeObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0, rootMargin: '0px 0px -5% 0px' });
+    document.querySelectorAll('.fade-in-section').forEach(el => fadeObserver.observe(el));
+  </script>
+</body>
+</html>
