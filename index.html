@@ -83,13 +83,13 @@
     .hero-text h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary); animation: fadeSlideUp 1s cubic-bezier(0.16,1,0.3,1) both 0.15s; }
     @keyframes fadeSlideUp { 0%{ opacity:0; transform: translateY(24px);} 100%{ opacity:1; transform:translateY(0);} }
     .hero-text p { max-width: 800px; margin: 0 auto 1.5rem; font-size: 1.05rem; animation: fadeSlideUp 1s cubic-bezier(0.16,1,0.3,1) both 0.3s; }
-    .trust-badges { list-style: none; display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .trust-badges { list-style: none; display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; color: var(--primary); font-weight: 600; }
     .trust-badges li { animation: fadeSlideUp 0.7s cubic-bezier(0.16,1,0.3,1) both; }
     .trust-badges li:nth-child(1){ animation-delay: 0.45s; }
     .trust-badges li:nth-child(2){ animation-delay: 0.6s; }
     .trust-badges li:nth-child(3){ animation-delay: 0.75s; }
 
-    /* Gambar Pertama Diperbesar Luasnya */
+    /* Size Showcase */
     .size-showcase { position: relative; z-index: 2; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 0 auto 1.5rem; }
     .product-size-card {
       position: relative; background: #fff; padding: 1.2rem; border-radius: 20px;
@@ -126,8 +126,6 @@
     .benefit-card::after { content:''; position: absolute; top: -40%; right: -40%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(124,58,237,0.12), transparent 70%); border-radius: 50%; animation: floatGlow 5s ease-in-out infinite; }
     @keyframes floatGlow { 0%,100%{ transform: translate(0,0);} 50%{ transform: translate(-10px,10px);} }
     .benefit-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 18px 30px -10px rgba(76,29,149,0.25); }
-    
-    /* 6 Gambar Kebaikan Utama Rasio 5 : 4.5 */
     .benefit-card img { width: 100%; aspect-ratio: 5 / 4.5; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.5s ease; }
     .benefit-card:hover img { transform: scale(1.05); }
     .benefit-card h3 { font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--secondary); }
@@ -202,6 +200,42 @@
     .address-box .pin { font-size: 1.1rem; }
     .address-box address { font-style: normal; font-weight: 500; color: var(--text-dark); font-size: 0.95rem; }
 
+    /* Floating WhatsApp Button (Warna Putih Di Kanan Bawah) */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 60px;
+      height: 60px;
+      background-color: #ffffff;
+      color: #25D366;
+      border-radius: 50px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border: 1px solid rgba(0,0,0,0.05);
+      animation: floatBreathe 2.5s infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1) translateY(-3px);
+      box-shadow: 0 8px 22px rgba(37, 211, 102, 0.4);
+      background-color: #ffffff;
+    }
+    .whatsapp-float svg {
+      width: 34px;
+      height: 34px;
+      fill: #25D366;
+    }
+    @keyframes floatBreathe {
+      0%, 100% { box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+      50% { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5); }
+    }
+
     footer { position: relative; background: var(--primary); color: #fff; text-align: center; padding: 2rem; margin-top: 3rem; }
     .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; will-change: opacity, visibility; }
     .fade-in-section.visible { opacity: 1; transform: none; }
@@ -214,6 +248,8 @@
       .size-showcase { flex-direction: column; align-items: center; }
       .trust-badges, .price-list { flex-direction: column; gap: 0.5rem; }
       .price-list { gap: 1rem; }
+      .whatsapp-float { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+      .whatsapp-float svg { width: 28px; height: 28px; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
@@ -244,8 +280,10 @@
     <div class="hero-text">
       <span class="slogan">Izaura Air Sehat Indonesia</span>
       <h1>Kesegaran Alami untuk Keluarga Anda</h1>
-      <p>Izaura adalah air minum ber-pH tinggi yang dipproses melalui tahapan penyaringan berlapis, didesain sesuai kebutuhan tubuh sehingga setiap tetesnya benar-benar murni, jernih, dan bebas dari kontaminan.</p>
+      <p>Izaura adalah air minum ber-pH tinggi yang diproses melalui tahapan penyaringan berlapis, didesain sesuai kebutuhan tubuh sehingga setiap tetesnya benar-benar murni, jernih, dan bebas dari kontaminan.</p>
       <ul class="trust-badges"><li>✓ 100% Higienis</li><li>✓ Teruji Berkualitas</li><li>✓ pH Tinggi</li></ul>
+      <!-- Tombol Pesan Halaman Awal -->
+      <a href="#contact" class="cta-button">Pesan Sekarang</a>
     </div>
   </section>
 
@@ -254,7 +292,7 @@
   <section id="benefits" class="fade-in-section">
     <div class="size-showcase">
       <div class="product-size-card">
-        <img src="tes/q.jpeg">
+        <img src="tes/q.jpeg" alt="Ukuran Produk Izaura">
       </div>
     </div>
     <h2>6 Kebaikan Utama Air Izaura</h2>
@@ -274,6 +312,7 @@
     <div class="contact-panel">
       <h2>Hubungi Kami</h2>
       <div class="contact-buttons">
+        <!-- WhatsApp diletakkan sebelum Instagram -->
         <a href="https://wa.me/6285278393474" target="_blank" rel="noopener noreferrer" class="contact-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           <span>WhatsApp</span>
@@ -295,6 +334,11 @@
     </div>
   </section>
 
+  <!-- Tombol WhatsApp Floating (Warna Putih Di Kanan Bawah) -->
+  <a href="https://wa.me/6285278393474" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat via WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
   <footer>
     &copy; <span id="year"></span> Agen Izaura Pandau Jaya - Izaura Air Sehat Indonesia.
     <div style="font-size:0.8rem; opacity:0.8; margin-top:0.4rem;">Agen resmi produk iZaura dari PT. Izaunet Berkah Mandiri, Bogor - Jawa Barat.</div>
@@ -313,7 +357,7 @@
     const waterPricing = {
       title: 'Daftar Harga Air Izaura',
       tiers: [
-        { label: 'Harga Non-Member', items: [{ size: 'Ukuran Besar (isi 12)', price: 'Rp 150.000' }, { size: 'Ukuran Kecil (isi 16)', price: 'Rp 190.000' }] },
+        { label: 'Harga Non-Member', items: [{ size: 'Ukuran Besar (isi 12)', price: 'Rp 150.000' }, { size: 'Ukuran Kecil (isi 16)', price: 'Rp 160.000' }] },
         { label: 'Harga Member', badge: 'Hemat Lebih', accent: true, items: [{ size: 'Ukuran Besar (isi 12)', price: 'Rp 90.000' }, { size: 'Ukuran Kecil (isi 16)', price: 'Rp 100.000' }] }
       ],
       cta: 'Pesan Air Izaura'
@@ -339,7 +383,7 @@
           { title: '3. Menjaga Kesehatan Tulang', text: 'Kandungan kalsium dan fosfor yang tinggi mendukung kepadatan dan kekuatan tulang.' },
           { title: '4. Membantu Pemulihan Stamina', text: 'Cocok dikonsumsi setelah beraktivitas berat untuk membantu memulihkan energi dan stamina tubuh.' }
         ],
-        priceGradient: 'var(--milk), #92400e', priceLabel: 'Per Kotak', priceValue: 'Rp 20.000', cta: 'Pesan Susu Etawa'
+        priceGradient: 'var(--milk), #92400e', priceLabel: 'Per Kotak', priceValue: 'Rp 175.000', cta: 'Pesan Susu Etawa'
       },
       {
         containerId: 'pupukSection', title: 'Pupuk Organik Majemuk Hayati', img: 'tes/pi.jpeg', alt: 'Pupuk Organik Majemuk Hayati', accentColor: 'var(--green)', photoTag: '100% Organik & Hayati',
@@ -351,7 +395,7 @@
           { title: '4. Mempercepat Pertumbuhan Akar', text: 'Kandungan hayati merangsang pertumbuhan akar lebih kuat sehingga tanaman lebih tahan kekeringan dan hama.' },
           { title: '5. Menghemat Biaya Perawatan', text: 'Mengurangi ketergantungan pada pupuk kimia sehingga biaya perawatan tanaman menjadi lebih efisien.' }
         ],
-        priceGradient: 'var(--green), #14532d', priceLabel: 'Per Kemasan', priceValue: 'Rp 15.000', cta: 'Pesan Pupuk'
+        priceGradient: 'var(--green), #14532d', priceLabel: 'Per Kemasan', priceValue: 'Rp 50.000', cta: 'Pesan Pupuk'
       }
     ];
 
